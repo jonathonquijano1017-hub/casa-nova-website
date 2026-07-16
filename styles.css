@@ -206,3 +206,94 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(18,104,189,.13);b
 @media(max-width:760px){
   .summary-breakdown{min-width:0}
 }
+
+
+/* Estimate box polish */
+.quote-summary{
+  align-items:stretch;
+}
+.summary-breakdown{
+  width:100%;
+  max-width:460px;
+}
+.summary-breakdown>div{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:18px;
+  padding:4px 0;
+}
+.summary-breakdown>div span{
+  color:#dbe8f5;
+  font-size:15px;
+}
+.summary-breakdown>div strong{
+  color:#f6c34e;
+  font-size:22px;
+  line-height:1;
+  text-align:right;
+}
+.summary-breakdown .summary-total{
+  margin-top:10px;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.28);
+}
+.summary-breakdown .summary-total span{
+  color:#fff;
+  font-size:17px;
+  font-weight:800;
+}
+.summary-breakdown .summary-total strong{
+  font-size:38px;
+}
+@media(max-width:760px){
+  .quote-summary{
+    gap:18px;
+  }
+  .summary-breakdown{
+    max-width:none;
+  }
+}
+
+
+/* Reliable button-based package selection */
+.service-package{
+  border:0;
+  padding:0;
+  margin:0;
+  background:transparent;
+  text-align:left;
+  font:inherit;
+  color:inherit;
+}
+.service-package span{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  padding:16px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  cursor:pointer;
+  background:#fff;
+}
+.service-package.selected span{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(18,104,189,.13);
+  background:#f4f9fe;
+}
+.service-package.selected span::after{
+  content:"✓";
+  position:absolute;
+  right:12px;
+  top:10px;
+  width:24px;
+  height:24px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--blue);
+  color:#fff;
+  font-weight:800;
+}
+.service-package{position:relative}

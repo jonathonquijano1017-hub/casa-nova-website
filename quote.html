@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body class="quote-page">
   <header class="site-header">
@@ -52,18 +52,16 @@
               <button type="button" class="package-card package-none" id="clearPackage">
                 <span><b>✕</b><strong data-en="None" data-es="Ninguno">None</strong><em>$0</em><small data-en="Clear package selection" data-es="Quitar selección de paquete">Clear package selection</small></span>
               </button>
-              <label class="package-card">
-                <input type="radio" name="service" value="laundry">
+              <button type="button" class="package-card service-package" data-service="laundry">
                 <span><b>🧺</b><strong data-en="Laundry Service" data-es="Servicio de Lavandería">Laundry Service</strong><em>$80</em><small data-en="1 basket included" data-es="1 canasta incluida">1 basket included</small></span>
-              </label>
-              <label class="package-card">
-                <input type="radio" name="service" value="cleaning">
+              </button>
+              <button type="button" class="package-card service-package" data-service="cleaning">
                 <span><b>🧼</b><strong data-en="Trailer Cleaning" data-es="Limpieza de Tráiler">Trailer Cleaning</strong><em>$80</em><small data-en="Standard cleaning" data-es="Limpieza estándar">Standard cleaning</small></span>
-              </label>
-              <label class="package-card">
-                <input type="radio" name="service" value="complete">
+              </button>
+              <button type="button" class="package-card service-package" data-service="complete">
                 <span><b>✨</b><strong data-en="Complete Refresh" data-es="Paquete Completo">Complete Refresh</strong><em>$135</em><small data-en="Save $25" data-es="Ahorre $25">Save $25</small></span>
-              </label>
+              </button>
+              <input type="hidden" id="selectedService" value="">
             </div>
           </div>
         </section>
@@ -135,6 +133,6 @@
     </div>
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

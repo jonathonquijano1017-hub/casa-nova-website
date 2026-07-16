@@ -50,26 +50,33 @@ if (form) {
   const deepClean = document.getElementById("deepClean");
   const clearPackageButton = document.getElementById("clearPackage");
   const clearAddonsButton = document.getElementById("clearAddons");
+  const selectedServiceInput = document.getElementById("selectedService");
+  const serviceButtons = [...document.querySelectorAll(".service-package")];
 
   function selectedService() {
-    return document.querySelector('input[name="service"]:checked')?.value || "";
+    return selectedServiceInput.value;
+  }
+
+  function setSelectedService(service) {
+    selectedServiceInput.value = service || "";
+    serviceButtons.forEach(button => {
+      button.classList.toggle("selected", button.dataset.service === service);
+    });
+    updateBasketVisibility();
   }
 
   function getAddonsSubtotal() {
-    let subtotal = 0;
-    document.querySelectorAll(".addon input:checked").forEach(input => {
-      subtotal += PRICES.addons[input.value];
-    });
-    return subtotal;
+    return [...document.querySelectorAll(".addon input:checked")]
+      .reduce((sum, input) => sum + Number(PRICES.addons[input.value] || 0), 0);
   }
 
   function calculateTotal() {
     const service = selectedService();
-    const packageSubtotal = service ? PRICES[service] : 0;
+    const packageSubtotal = service ? Number(PRICES[service] || 0) : 0;
     const baskets = Math.max(1, Number(basketInput.value || 1));
     const laundrySubtotal =
       service === "laundry" || service === "complete"
-        ? Math.max(0, baskets - 1) * PRICES.extraBasket
+        ? Math.max(0, baskets - 1) * Number(PRICES.extraBasket)
         : 0;
     const addonsSubtotal = getAddonsSubtotal();
     const total = packageSubtotal + laundrySubtotal + addonsSubtotal;
@@ -80,8 +87,10 @@ if (form) {
     totalEl.textContent = `$${total}`;
 
     clearPackageButton.classList.toggle("active", !service);
-    const hasAddons = document.querySelectorAll(".addon input:checked").length > 0;
-    clearAddonsButton.classList.toggle("active", !hasAddons);
+    clearAddonsButton.classList.toggle(
+      "active",
+      document.querySelectorAll(".addon input:checked").length === 0
+    );
 
     return total;
   }
@@ -94,37 +103,14 @@ if (form) {
     calculateTotal();
   }
 
-  function clearPackageSelection() {
-    document.querySelectorAll('input[name="service"]').forEach(input => {
-      input.checked = false;
-    });
-    updateBasketVisibility();
-  }
-
-  document.querySelectorAll(".package-card:not(.package-none)").forEach(card => {
-    const input = card.querySelector('input[name="service"]');
-    let wasSelected = false;
-
-    card.addEventListener("pointerdown", () => {
-      wasSelected = input.checked;
-    });
-
-    card.addEventListener("click", event => {
-      event.preventDefault();
-
-      document.querySelectorAll('input[name="service"]').forEach(serviceInput => {
-        serviceInput.checked = false;
-      });
-
-      if (!wasSelected) {
-        input.checked = true;
-      }
-
-      updateBasketVisibility();
+  serviceButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const service = button.dataset.service;
+      setSelectedService(selectedService() === service ? "" : service);
     });
   });
 
-  clearPackageButton.addEventListener("click", clearPackageSelection);
+  clearPackageButton.addEventListener("click", () => setSelectedService(""));
 
   function clearAllAddons() {
     document.querySelectorAll(".addon input").forEach(input => {
@@ -136,16 +122,10 @@ if (form) {
   }
 
   clearAddonsButton.addEventListener("click", clearAllAddons);
-
   basketInput.addEventListener("input", calculateTotal);
 
   document.querySelectorAll(".addon input").forEach(input => {
-    input.addEventListener("change", () => {
-      if (input !== deepClean && input.checked) {
-        clearAddonsButton.classList.remove("active");
-      }
-      calculateTotal();
-    });
+    input.addEventListener("change", calculateTotal);
   });
 
   deepClean.addEventListener("change", () => {
@@ -159,13 +139,7 @@ if (form) {
 
   const params = new URLSearchParams(window.location.search);
   const preselected = params.get("service");
-  if (preselected && PRICES[preselected]) {
-    const input = document.querySelector(`input[name="service"][value="${preselected}"]`);
-    if (input) input.checked = true;
-  }
-
-  updateBasketVisibility();
-  calculateTotal();
+  setSelectedService(preselected && PRICES[preselected] ? preselected : "");
 
   form.addEventListener("submit", event => {
     event.preventDefault();

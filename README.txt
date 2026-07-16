@@ -36,3 +36,20 @@ NEW UPDATE:
   Extra laundry
   Add-ons
   Total
+
+
+FIX UPDATE:
+- Fixed package selection on mobile and desktop.
+- Tap once to select a package.
+- Tap the selected package again to deselect it.
+- Fixed all estimate calculations.
+- Package, extra laundry, add-ons, and total now update immediately.
+- Cleaned the blue estimate box so yellow amounts align correctly beside each label.
+
+
+FORCE REFRESH FIX:
+- Replaced radio/label package controls with true buttons.
+- Package selection now works reliably on iPhone.
+- Tap once to select and tap again to deselect.
+- Added version numbers to CSS and JavaScript links to bypass browser cache.
+- Estimate updates immediately for package, extra laundry, add-ons, and total.
