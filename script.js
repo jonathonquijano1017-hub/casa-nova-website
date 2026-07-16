@@ -9,20 +9,18 @@ const PRICES = {
 const labels = {
   en: {
     services: { laundry: "Laundry Service", cleaning: "Standard Trailer Cleaning", complete: "Complete Refresh Package" },
-    addons: { bed: "Bed Refresh", fridge: "Refrigerator Cleaning", microwave: "Microwave Cleaning", pet: "Pet Hair Removal", kitchen: "Kitchen Organization", deep: "Deep Clean Upgrade" },
-    yes: "Yes", no: "No", none: "None", flexible: "Flexible"
+    addons: { bed: "Bed Refresh", fridge: "Refrigerator Cleaning", microwave: "Microwave Cleaning", pet: "Pet Hair Removal", kitchen: "Kitchen Organization", deep: "Deep Clean Upgrade" }
   },
   es: {
     services: { laundry: "Servicio de Lavandería", cleaning: "Limpieza Estándar de Tráiler", complete: "Paquete Completo Casa Nova" },
-    addons: { bed: "Servicio de Cama", fridge: "Limpieza de Refrigerador", microwave: "Limpieza de Microondas", pet: "Eliminación de Pelo de Mascota", kitchen: "Organización de Cocina", deep: "Limpieza Profunda" },
-    yes: "Sí", no: "No", none: "Ninguno", flexible: "Flexible"
+    addons: { bed: "Servicio de Cama", fridge: "Limpieza de Refrigerador", microwave: "Limpieza de Microondas", pet: "Eliminación de Pelo de Mascota", kitchen: "Organización de Cocina", deep: "Limpieza Profunda" }
   }
 };
 
 let currentLang = "en";
-
 const menuBtn = document.querySelector(".menu-btn");
 const nav = document.querySelector(".nav-links");
+
 menuBtn.addEventListener("click", () => {
   const open = nav.classList.toggle("open");
   menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
@@ -49,6 +47,21 @@ document.querySelectorAll(".lang-btn").forEach(btn => {
   btn.addEventListener("click", () => translatePage(btn.dataset.lang));
 });
 
+document.querySelectorAll(".step-header").forEach(header => {
+  header.addEventListener("click", () => {
+    const section = header.closest(".form-step");
+    section.classList.toggle("open");
+    header.querySelector("i").textContent = section.classList.contains("open") ? "−" : "+";
+  });
+});
+
+function openStep(number) {
+  const section = document.querySelector(`.form-step[data-step="${number}"]`);
+  if (!section) return;
+  section.classList.add("open");
+  section.querySelector(".step-header i").textContent = "−";
+}
+
 function selectedService() {
   return document.querySelector('input[name="service"]:checked')?.value || "";
 }
@@ -57,12 +70,15 @@ function calculateTotal() {
   const service = selectedService();
   let total = service ? PRICES[service] : 0;
   const baskets = Math.max(1, Number(document.getElementById("baskets").value || 1));
+
   if (service === "laundry" || service === "complete") {
     total += Math.max(0, baskets - 1) * PRICES.extraBasket;
   }
+
   document.querySelectorAll(".addon input:checked").forEach(input => {
     total += PRICES.addons[input.value];
   });
+
   document.getElementById("estimatedTotal").textContent = `$${total}`;
   return total;
 }
@@ -72,11 +88,27 @@ function updateBasketVisibility() {
   const section = document.getElementById("basketSection");
   const relevant = service === "laundry" || service === "complete";
   section.style.display = relevant ? "grid" : "none";
+
   if (!relevant) document.getElementById("baskets").value = 1;
   calculateTotal();
 }
 
-document.querySelectorAll('input[name="service"]').forEach(input => {
+document.querySelectorAll(".choice-card").forEach(card => {
+  const input = card.querySelector('input[name="service"]');
+
+  card.addEventListener("click", event => {
+    if (input.checked) {
+      event.preventDefault();
+      input.checked = false;
+      updateBasketVisibility();
+    } else {
+      setTimeout(() => {
+        updateBasketVisibility();
+        openStep(2);
+      }, 0);
+    }
+  });
+
   input.addEventListener("change", updateBasketVisibility);
 });
 
@@ -85,6 +117,7 @@ document.querySelectorAll(".addon input").forEach(input => input.addEventListene
 
 const deepClean = document.getElementById("deepClean");
 const includedByDeep = ["bed", "fridge", "microwave"];
+
 deepClean.addEventListener("change", () => {
   includedByDeep.forEach(value => {
     const input = document.querySelector(`.addon input[value="${value}"]`);
@@ -97,16 +130,30 @@ deepClean.addEventListener("change", () => {
 document.querySelectorAll(".select-service").forEach(button => {
   button.addEventListener("click", () => {
     const radio = document.querySelector(`input[name="service"][value="${button.dataset.service}"]`);
+
+    if (radio.checked) {
+      radio.checked = false;
+      updateBasketVisibility();
+      return;
+    }
+
     radio.checked = true;
     updateBasketVisibility();
     document.getElementById("book").scrollIntoView({ behavior: "smooth" });
+    openStep(1);
+    openStep(2);
   });
 });
 
 document.getElementById("bookingForm").addEventListener("submit", event => {
   event.preventDefault();
   const service = selectedService();
-  if (!service) return;
+
+  if (!service) {
+    openStep(1);
+    alert(currentLang === "es" ? "Seleccione un servicio principal." : "Please select a main service.");
+    return;
+  }
 
   const total = calculateTotal();
   const baskets = Number(document.getElementById("baskets").value || 1);
