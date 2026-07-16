@@ -1,37 +1,22 @@
-CASA NOVA WEBSITE — FULL UPDATE
+CASA NOVA WEBSITE — SHORT TWO-PAGE VERSION
 
-This version includes:
-- Stronger hero section: “We Clean. You Relax.”
-- Larger mobile text and improved spacing
-- English / Spanish switch
-- Detailed service inclusions
-- Trust badge strip
-- Brand photo section
-- About Casa Nova section
-- Four-step accordion booking form
-- Automatic estimated total
-- Additional basket calculation at $15 each
-- Add-ons inside the booking form
-- Deep Clean prevents duplicate Bed / Refrigerator / Microwave charges
-- Main packages can be deselected by tapping them again
-- Large service buttons also toggle selected packages
-- Sticky Call Now and Text Us buttons on mobile
-- Clear quote and appointment-confirmation wording
-- Updated satisfaction guarantee wording
+What changed:
+- Removed all bulky mid-page photos
+- Kept one hero photo at the top only
+- Short homepage designed to fit mostly within one phone screen
+- Homepage now shows only the main message, three service shortcuts, phone/text actions, and a quote button
+- Added separate quote.html page for packages, add-ons, customer details, and estimated total
+- Package cards can be clicked again to deselect
+- Homepage service shortcuts preselect the chosen package on quote.html
+- English / Spanish support remains
+- Booking request still opens a prepared text message to (956) 272-2071
 
-Files to upload to the existing GitHub repository:
+Upload these files to the root of the existing GitHub repository:
 - index.html
+- quote.html
 - styles.css
 - script.js
-- hero-casa-nova.jpg
-- service-photo-1.jpg
-- service-photo-2.jpg
-- service-photo-3.jpg
+- hero.jpg
 
-Upload these files to the ROOT of the existing casa-nova-website repository and replace existing files with the same names.
-
-Not added:
-- Fake customer reviews
-- Fake before-and-after photos
-
-Those should only be added after Casa Nova has real customer reviews and real service photos.
+Replace existing index.html, styles.css, and script.js.
+You may delete the old hero and service-photo files afterward because this version does not use them.

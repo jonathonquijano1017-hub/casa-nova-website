@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Casa Nova provides professional trailer cleaning and laundry pickup, washing, drying, folding, and return services in South Texas.">
+  <meta name="description" content="Casa Nova professional cleaning and laundry services in South Texas.">
   <title>Casa Nova | Cleaning & Laundry Services</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="home-page">
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="Casa Nova home">
+      <a class="brand" href="index.html" aria-label="Casa Nova home">
         <svg class="brand-mark" viewBox="0 0 120 70" aria-hidden="true">
           <path d="M8 40 57 7l49 33h-15L57 18 23 40Z" fill="currentColor"/>
           <path d="M18 49c29 8 55 8 88-6-21 18-54 25-88 15Z" fill="#1E88E5"/>
@@ -21,347 +21,63 @@
           <path d="M57 29v14M50 36h14" stroke="#fff" stroke-width="2"/>
           <path d="m102 14 2.5 6.5L111 23l-6.5 2.5L102 32l-2.5-6.5L93 23l6.5-2.5Z" fill="#D4A017"/>
         </svg>
-        <span>
-          <strong>CASA NOVA</strong>
-          <small data-en="Cleaning & Laundry Services" data-es="Servicios de Limpieza y Lavandería">Cleaning & Laundry Services</small>
-        </span>
+        <span><strong>CASA NOVA</strong><small>Cleaning & Laundry Services</small></span>
       </a>
-
-      <div class="header-actions">
-        <div class="language-switch" aria-label="Language selection">
+      <div class="header-right">
+        <div class="language-switch">
           <button class="lang-btn active" type="button" data-lang="en">EN</button>
           <button class="lang-btn" type="button" data-lang="es">ES</button>
         </div>
-        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+        <a class="header-phone" href="tel:+19562722071">(956) 272-2071</a>
       </div>
-
-      <nav class="nav-links">
-        <a href="#services" data-en="Services" data-es="Servicios">Services</a>
-        <a href="#about" data-en="About" data-es="Nosotros">About</a>
-        <a href="#how" data-en="How It Works" data-es="Cómo Funciona">How It Works</a>
-        <a href="#book" data-en="Get a Free Quote" data-es="Cotización Gratis">Get a Free Quote</a>
-        <a class="nav-call" href="tel:+19562722071" data-en="Call (956) 272-2071" data-es="Llame al (956) 272-2071">Call (956) 272-2071</a>
-      </nav>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow" data-en="South Texas cleaning & laundry service" data-es="Servicio de limpieza y lavandería en el sur de Texas">South Texas cleaning & laundry service</p>
-          <h1 data-en="We clean. You relax." data-es="Nosotros limpiamos. Usted se relaja.">We clean. You relax.</h1>
-          <p class="hero-tagline" data-en="You work hard. We handle the rest." data-es="Usted trabaja duro. Nosotros nos encargamos del resto.">You work hard. We handle the rest.</p>
-          <p class="hero-text" data-en="Professional trailer cleaning and laundry pickup, wash, dry, fold, and return for hardworking people who value their time." data-es="Limpieza profesional de tráiler y servicio de recolección, lavado, secado, doblado y entrega de ropa para personas trabajadoras que valoran su tiempo.">
-            Professional trailer cleaning and laundry pickup, wash, dry, fold, and return for hardworking people who value their time.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#book" data-en="Get a Free Quote" data-es="Solicitar Cotización Gratis">Get a Free Quote</a>
-            <a class="btn btn-secondary" href="sms:+19562722071?&body=Hi%20Casa%20Nova!%20I%27m%20interested%20in%20your%20services." data-en="Text Casa Nova" data-es="Enviar Mensaje">Text Casa Nova</a>
-          </div>
-          <div class="trust-row">
-            <span data-en="✓ Locally operated" data-es="✓ Operado localmente">✓ Locally operated</span>
-            <span data-en="✓ Clear pricing" data-es="✓ Precios claros">✓ Clear pricing</span>
-            <span data-en="✓ No contracts" data-es="✓ Sin contratos">✓ No contracts</span>
-          </div>
-        </div>
-
-        <div class="hero-photo-wrap">
-          <img src="hero-casa-nova.jpg" alt="Fresh folded towels in a clean bedroom">
-          <div class="hero-photo-badge">
-            <strong data-en="A cleaner home." data-es="Un hogar más limpio.">A cleaner home.</strong>
-            <span data-en="More time for you." data-es="Más tiempo para usted.">More time for you.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="trust-strip">
-      <div class="container trust-grid">
-        <div><b>✓</b><span data-en="Reliable Service" data-es="Servicio Confiable">Reliable Service</span></div>
-        <div><b>✓</b><span data-en="Premium Detergent Included" data-es="Detergente Premium Incluido">Premium Detergent Included</span></div>
-        <div><b>✓</b><span data-en="Flexible Scheduling" data-es="Horarios Flexibles">Flexible Scheduling</span></div>
-        <div><b>✓</b><span data-en="Satisfaction Guarantee" data-es="Garantía de Satisfacción">Satisfaction Guarantee</span></div>
-      </div>
-    </section>
-
-    <section id="services" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow" data-en="Services and pricing" data-es="Servicios y precios">Services and pricing</p>
-          <h2 data-en="Simple prices. No hidden fees." data-es="Precios sencillos. Sin cargos ocultos.">Simple prices. No hidden fees.</h2>
-          <p data-en="Choose the service that fits your week. Final pricing is confirmed before work begins." data-es="Elija el servicio que mejor se adapte a su semana. El precio final se confirma antes de comenzar el trabajo.">Choose the service that fits your week. Final pricing is confirmed before work begins.</p>
-        </div>
-
-        <div class="cards">
-          <article class="service-card">
-            <div class="service-icon">🧺</div>
-            <h3 data-en="Laundry Service" data-es="Servicio de Lavandería">Laundry Service</h3>
-            <p class="price">$80</p>
-            <p class="card-sub" data-en="Pickup, wash, dry, fold, and return." data-es="Recolección, lavado, secado, doblado y entrega.">Pickup, wash, dry, fold, and return.</p>
-            <ul class="check-list">
-              <li data-en="1 standard laundry basket included" data-es="1 canasta estándar incluida">1 standard laundry basket included</li>
-              <li data-en="Premium detergent included" data-es="Detergente premium incluido">Premium detergent included</li>
-              <li data-en="Folded and returned to your door" data-es="Doblada y entregada en su puerta">Folded and returned to your door</li>
-              <li data-en="Additional baskets: +$15 each" data-es="Canastas adicionales: +$15 cada una">Additional baskets: +$15 each</li>
-            </ul>
-            <button class="select-service" type="button" data-service="laundry" data-en="Choose Laundry" data-es="Elegir Lavandería">Choose Laundry</button>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">🧼</div>
-            <h3 data-en="Standard Trailer Cleaning" data-es="Limpieza Estándar de Tráiler">Standard Trailer Cleaning</h3>
-            <p class="price">$80</p>
-            <p class="card-sub" data-en="A complete basic refresh for a regularly maintained trailer." data-es="Una limpieza básica completa para un tráiler con mantenimiento regular.">A complete basic refresh for a regularly maintained trailer.</p>
-            <ul class="check-list">
-              <li data-en="Vacuum and mop floors" data-es="Aspirar y trapear pisos">Vacuum and mop floors</li>
-              <li data-en="Kitchen, counters, sink, and surfaces" data-es="Cocina, mostradores, fregadero y superficies">Kitchen, counters, sink, and surfaces</li>
-              <li data-en="Bathroom, toilet, and shower/tub" data-es="Baño, inodoro y regadera/tina">Bathroom, toilet, and shower/tub</li>
-              <li data-en="Dusting, trash, and high-touch areas" data-es="Polvo, basura y áreas de alto contacto">Dusting, trash, and high-touch areas</li>
-            </ul>
-            <button class="select-service" type="button" data-service="cleaning" data-en="Choose Cleaning" data-es="Elegir Limpieza">Choose Cleaning</button>
-          </article>
-
-          <article class="service-card featured">
-            <div class="popular" data-en="Most Popular" data-es="Más Popular">Most Popular</div>
-            <div class="service-icon">✨</div>
-            <h3 data-en="Complete Refresh Package" data-es="Paquete Completo Casa Nova">Complete Refresh Package</h3>
-            <p class="price">$135</p>
-            <p class="card-sub" data-en="Your trailer and laundry handled together." data-es="Su tráiler y su ropa atendidos juntos.">Your trailer and laundry handled together.</p>
-            <ul class="check-list">
-              <li data-en="Laundry service with 1 basket included" data-es="Lavandería con 1 canasta incluida">Laundry service with 1 basket included</li>
-              <li data-en="Standard trailer cleaning included" data-es="Limpieza estándar de tráiler incluida">Standard trailer cleaning included</li>
-              <li data-en="Save $25 versus purchasing separately" data-es="Ahorre $25 comparado con comprarlos por separado">Save $25 versus purchasing separately</li>
-              <li data-en="Best value for recurring customers" data-es="Mejor valor para clientes recurrentes">Best value for recurring customers</li>
-            </ul>
-            <button class="select-service" type="button" data-service="complete" data-en="Choose Complete Refresh" data-es="Elegir Paquete Completo">Choose Complete Refresh</button>
-          </article>
-        </div>
-
-        <div class="service-note">
-          <strong data-en="Standard-pricing limit:" data-es="Límite del precio estándar:">Standard-pricing limit:</strong>
-          <span data-en="Extreme buildup, hazardous materials, pests, mold, or conditions not disclosed before arrival are not included and may be declined or quoted separately." data-es="La acumulación extrema, materiales peligrosos, plagas, moho o condiciones no informadas antes de la llegada no están incluidas y pueden rechazarse o cotizarse por separado.">
-            Extreme buildup, hazardous materials, pests, mold, or conditions not disclosed before arrival are not included and may be declined or quoted separately.
-          </span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt visual-section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow" data-en="The Casa Nova experience" data-es="La experiencia Casa Nova">The Casa Nova experience</p>
-          <h2 data-en="Fresh, clean, and ready for you." data-es="Fresco, limpio y listo para usted.">Fresh, clean, and ready for you.</h2>
-        </div>
-        <div class="photo-grid">
-          <figure><img src="service-photo-1.jpg" alt="Fresh towels and laundry"><figcaption data-en="Fresh laundry" data-es="Ropa fresca">Fresh laundry</figcaption></figure>
-          <figure><img src="service-photo-2.jpg" alt="Clean bedroom and towels"><figcaption data-en="Clean spaces" data-es="Espacios limpios">Clean spaces</figcaption></figure>
-          <figure><img src="service-photo-3.jpg" alt="Organized folded towels"><figcaption data-en="More free time" data-es="Más tiempo libre">More free time</figcaption></figure>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container about-grid">
-        <div>
-          <p class="eyebrow" data-en="About Casa Nova" data-es="Acerca de Casa Nova">About Casa Nova</p>
-          <h2 data-en="Built for hardworking people." data-es="Creado para personas trabajadoras.">Built for hardworking people.</h2>
-        </div>
-        <div>
-          <p data-en="Casa Nova was created to help refinery workers, welders, pipefitters, contractors, travelers, and busy families come home to a clean space without spending their limited free time cleaning and doing laundry." data-es="Casa Nova fue creado para ayudar a trabajadores de refinería, soldadores, pipefitters, contratistas, viajeros y familias ocupadas a regresar a un espacio limpio sin gastar su poco tiempo libre limpiando y lavando ropa.">
-            Casa Nova was created to help refinery workers, welders, pipefitters, contractors, travelers, and busy families come home to a clean space without spending their limited free time cleaning and doing laundry.
-          </p>
-          <p data-en="We focus on dependable service, clear communication, and treating every trailer or home with care and respect." data-es="Nos enfocamos en servicio confiable, comunicación clara y tratar cada tráiler u hogar con cuidado y respeto.">
-            We focus on dependable service, clear communication, and treating every trailer or home with care and respect.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="how" class="section section-alt">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow" data-en="How it works" data-es="Cómo funciona">How it works</p>
-          <h2 data-en="Easy from start to finish" data-es="Fácil de principio a fin">Easy from start to finish</h2>
-        </div>
-        <div class="steps">
-          <div class="step"><b>1</b><h3 data-en="Choose your service" data-es="Elija su servicio">Choose your service</h3><p data-en="Pick cleaning, laundry, or the complete package." data-es="Elija limpieza, lavandería o el paquete completo.">Pick cleaning, laundry, or the complete package.</p></div>
-          <div class="step"><b>2</b><h3 data-en="Tell us the details" data-es="Comparta los detalles">Tell us the details</h3><p data-en="Tell us about baskets, rooms, pets, access, and timing." data-es="Díganos sobre canastas, cuartos, mascotas, acceso y horario.">Tell us about baskets, rooms, pets, access, and timing.</p></div>
-          <div class="step"><b>3</b><h3 data-en="We confirm everything" data-es="Confirmamos todo">We confirm everything</h3><p data-en="We confirm availability, condition, and final pricing." data-es="Confirmamos disponibilidad, condición y precio final.">We confirm availability, condition, and final pricing.</p></div>
-          <div class="step"><b>4</b><h3 data-en="You relax" data-es="Usted se relaja">You relax</h3><p data-en="Come home to a refreshed space and fresh, folded laundry." data-es="Regrese a un espacio renovado y ropa limpia y doblada.">Come home to a refreshed space and fresh, folded laundry.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="guarantee">
-      <div class="container guarantee-grid">
-        <div>
-          <p class="eyebrow light" data-en="Casa Nova Guarantee" data-es="Garantía Casa Nova">Casa Nova Guarantee</p>
-          <h2 data-en="Your satisfaction is our priority." data-es="Su satisfacción es nuestra prioridad.">Your satisfaction is our priority.</h2>
-        </div>
-        <p data-en="Contact us within 24 hours if an included area was missed, and we will return to correct that area at no additional charge. This does not cover new messes, added services, or conditions that were not disclosed before the appointment." data-es="Contáctenos dentro de 24 horas si se omitió un área incluida y regresaremos a corregirla sin costo adicional. Esto no cubre nuevos desórdenes, servicios adicionales ni condiciones que no se informaron antes de la cita.">
-          Contact us within 24 hours if an included area was missed, and we will return to correct that area at no additional charge. This does not cover new messes, added services, or conditions that were not disclosed before the appointment.
+  <main>
+    <section class="home-hero">
+      <img class="hero-bg" src="hero.jpg" alt="Fresh folded towels in a clean home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow light" data-en="South Texas Cleaning & Laundry Service" data-es="Servicio de Limpieza y Lavandería en el Sur de Texas">South Texas Cleaning & Laundry Service</p>
+        <h1 data-en="We clean. You relax." data-es="Nosotros limpiamos. Usted se relaja.">We clean. You relax.</h1>
+        <p class="hero-tagline" data-en="You work hard. We handle the rest." data-es="Usted trabaja duro. Nosotros nos encargamos del resto.">You work hard. We handle the rest.</p>
+        <p class="hero-summary" data-en="Professional trailer cleaning and laundry pickup, wash, dry, fold, and return." data-es="Limpieza profesional de tráiler y recolección, lavado, secado, doblado y entrega de ropa.">
+          Professional trailer cleaning and laundry pickup, wash, dry, fold, and return.
         </p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="quote.html" data-en="Get a Free Quote" data-es="Solicitar Cotización Gratis">Get a Free Quote</a>
+          <a class="btn btn-glass" href="tel:+19562722071" data-en="Call Today" data-es="Llamar Hoy">Call Today</a>
+        </div>
       </div>
     </section>
 
-    <section id="book" class="section">
-      <div class="container booking-grid">
-        <div class="booking-copy">
-          <p class="eyebrow" data-en="Free quote request" data-es="Solicitud de cotización gratis">Free quote request</p>
-          <h2 data-en="Build your Casa Nova refresh." data-es="Arme su servicio Casa Nova.">Build your Casa Nova refresh.</h2>
-          <p data-en="Complete four short steps. You will see an estimated total before sending your request." data-es="Complete cuatro pasos cortos. Verá un total estimado antes de enviar su solicitud.">
-            Complete four short steps. You will see an estimated total before sending your request.
-          </p>
-          <div class="contact-card">
-            <strong data-en="Call or text" data-es="Llame o envíe mensaje">Call or text</strong>
-            <a href="tel:+19562722071">(956) 272-2071</a>
-            <span data-en="South Texas and surrounding areas" data-es="Sur de Texas y áreas cercanas">South Texas and surrounding areas</span>
-          </div>
+    <section class="quick-options">
+      <div class="container quick-grid">
+        <a href="quote.html?service=laundry" class="quick-card">
+          <span>🧺</span>
+          <div><strong data-en="Laundry" data-es="Lavandería">Laundry</strong><small data-en="Starting at $80" data-es="Desde $80">Starting at $80</small></div>
+        </a>
+        <a href="quote.html?service=cleaning" class="quick-card">
+          <span>🧼</span>
+          <div><strong data-en="Trailer Cleaning" data-es="Limpieza de Tráiler">Trailer Cleaning</strong><small data-en="Starting at $80" data-es="Desde $80">Starting at $80</small></div>
+        </a>
+        <a href="quote.html?service=complete" class="quick-card featured">
+          <span>✨</span>
+          <div><strong data-en="Complete Refresh" data-es="Paquete Completo">Complete Refresh</strong><small data-en="$135 · Best value" data-es="$135 · Mejor valor">$135 · Best value</small></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="home-footer-callout">
+      <div class="container callout-row">
+        <div>
+          <strong data-en="Clear pricing. No contracts. Reliable service." data-es="Precios claros. Sin contratos. Servicio confiable.">Clear pricing. No contracts. Reliable service.</strong>
+          <span data-en="Serving South Texas and surrounding areas." data-es="Sirviendo al Sur de Texas y áreas cercanas.">Serving South Texas and surrounding areas.</span>
         </div>
-
-        <form id="bookingForm" class="booking-form">
-          <section class="form-step open" data-step="1">
-            <button class="step-header" type="button">
-              <span><b>1</b><span data-en="Select your main service" data-es="Elija su servicio principal">Select your main service</span></span>
-              <i>−</i>
-            </button>
-            <div class="step-content">
-              <div class="service-options">
-                <label class="choice-card">
-                  <input type="radio" name="service" value="laundry">
-                  <span><strong data-en="Laundry Service" data-es="Servicio de Lavandería">Laundry Service</strong><em>$80</em></span>
-                </label>
-                <label class="choice-card">
-                  <input type="radio" name="service" value="cleaning">
-                  <span><strong data-en="Trailer Cleaning" data-es="Limpieza de Tráiler">Trailer Cleaning</strong><em>$80</em></span>
-                </label>
-                <label class="choice-card">
-                  <input type="radio" name="service" value="complete">
-                  <span><strong data-en="Complete Refresh" data-es="Paquete Completo">Complete Refresh</strong><em>$135</em></span>
-                </label>
-              </div>
-              <p class="helper strong-helper" data-en="Tap a selected package again to remove it." data-es="Toque nuevamente un paquete seleccionado para quitarlo.">Tap a selected package again to remove it.</p>
-            </div>
-          </section>
-
-          <section class="form-step" data-step="2">
-            <button class="step-header" type="button">
-              <span><b>2</b><span data-en="Laundry and add-ons" data-es="Lavandería y extras">Laundry and add-ons</span></span>
-              <i>+</i>
-            </button>
-            <div class="step-content">
-              <div id="basketSection">
-                <label>
-                  <span data-en="Total standard laundry baskets" data-es="Total de canastas estándar">Total standard laundry baskets</span>
-                  <input id="baskets" type="number" min="1" max="20" value="1">
-                </label>
-                <p class="helper" data-en="The first basket is included with Laundry or Complete Refresh. Each additional basket is $15." data-es="La primera canasta está incluida con Lavandería o Paquete Completo. Cada canasta adicional cuesta $15.">
-                  The first basket is included with Laundry or Complete Refresh. Each additional basket is $15.
-                </p>
-              </div>
-
-              <div class="addon-grid booking-addons">
-                <label class="addon"><input type="checkbox" value="bed" data-price="50"><span>🛏️ <strong data-en="Bed Refresh" data-es="Servicio de Cama">Bed Refresh</strong><em>$50</em></span></label>
-                <label class="addon"><input type="checkbox" value="fridge" data-price="50"><span>🧊 <strong data-en="Refrigerator Cleaning" data-es="Limpieza de Refrigerador">Refrigerator Cleaning</strong><em>$50</em></span></label>
-                <label class="addon"><input type="checkbox" value="microwave" data-price="20"><span>🍽️ <strong data-en="Microwave Cleaning" data-es="Limpieza de Microondas">Microwave Cleaning</strong><em>$20</em></span></label>
-                <label class="addon"><input type="checkbox" value="pet" data-price="25"><span>🐾 <strong data-en="Pet Hair Removal" data-es="Eliminación de Pelo de Mascota">Pet Hair Removal</strong><em>$25</em></span></label>
-                <label class="addon"><input type="checkbox" value="kitchen" data-price="25"><span>🍴 <strong data-en="Kitchen Organization" data-es="Organización de Cocina">Kitchen Organization</strong><em>$25</em></span></label>
-                <label class="addon deep-addon"><input id="deepClean" type="checkbox" value="deep" data-price="80"><span>💫 <strong data-en="Deep Clean Upgrade" data-es="Limpieza Profunda">Deep Clean Upgrade</strong><em>$80</em></span></label>
-              </div>
-              <p class="helper" data-en="Deep Clean includes Bed Refresh, refrigerator cleaning, microwave cleaning, and extra detailing." data-es="La Limpieza Profunda incluye Servicio de Cama, limpieza de refrigerador, limpieza de microondas y detallado adicional.">
-                Deep Clean includes Bed Refresh, refrigerator cleaning, microwave cleaning, and extra detailing.
-              </p>
-            </div>
-          </section>
-
-          <section class="form-step" data-step="3">
-            <button class="step-header" type="button">
-              <span><b>3</b><span data-en="Your information" data-es="Su información">Your information</span></span>
-              <i>+</i>
-            </button>
-            <div class="step-content">
-              <label><span data-en="Name" data-es="Nombre">Name</span><input id="name" type="text" required placeholder="Your name"></label>
-              <label><span data-en="Phone" data-es="Teléfono">Phone</span><input id="phone" type="tel" required placeholder="Your phone number"></label>
-              <label><span data-en="Address or RV park" data-es="Dirección o parque de RV">Address or RV park</span><input id="address" type="text" placeholder="Service location"></label>
-              <div class="form-row">
-                <label><span data-en="Bedrooms" data-es="Recámaras">Bedrooms</span><input id="bedrooms" type="number" min="0" value="1"></label>
-                <label><span data-en="Bathrooms" data-es="Baños">Bathrooms</span><input id="bathrooms" type="number" min="0" step="0.5" value="1"></label>
-              </div>
-              <div class="form-row">
-                <label><span data-en="Pets?" data-es="¿Mascotas?">Pets?</span>
-                  <select id="pets"><option value="No">No</option><option value="Yes">Yes</option></select>
-                </label>
-                <label><span data-en="Preferred date" data-es="Fecha preferida">Preferred date</span><input id="date" type="date"></label>
-              </div>
-              <label><span data-en="Detergent preference" data-es="Preferencia de detergente">Detergent preference</span>
-                <select id="detergent">
-                  <option value="No preference" data-en="No preference" data-es="Sin preferencia">No preference</option>
-                  <option value="Tide">Tide</option>
-                  <option value="Gain">Gain</option>
-                  <option value="Arm & Hammer">Arm & Hammer</option>
-                  <option value="Free & Clear">Free & Clear</option>
-                </select>
-              </label>
-              <label><span data-en="Notes" data-es="Notas">Notes</span><textarea id="notes" rows="4" placeholder="Access instructions, condition, timing, or special requests"></textarea></label>
-            </div>
-          </section>
-
-          <section class="form-step" data-step="4">
-            <button class="step-header" type="button">
-              <span><b>4</b><span data-en="Review and send" data-es="Revisar y enviar">Review and send</span></span>
-              <i>+</i>
-            </button>
-            <div class="step-content">
-              <div class="estimate-box" aria-live="polite">
-                <span data-en="Estimated total" data-es="Total estimado">Estimated total</span>
-                <strong id="estimatedTotal">$0</strong>
-                <small data-en="Final pricing is confirmed after Casa Nova reviews the request and service condition." data-es="El precio final se confirma después de que Casa Nova revise la solicitud y la condición del servicio.">
-                  Final pricing is confirmed after Casa Nova reviews the request and service condition.
-                </small>
-              </div>
-
-              <button class="btn btn-primary full" type="submit" data-en="Request an Appointment" data-es="Solicitar una Cita">Request an Appointment</button>
-              <p class="confirmation-note" data-en="This request does not confirm an appointment. Casa Nova must respond and confirm availability, condition, and final pricing." data-es="Esta solicitud no confirma una cita. Casa Nova debe responder y confirmar disponibilidad, condición y precio final.">
-                This request does not confirm an appointment. Casa Nova must respond and confirm availability, condition, and final pricing.
-              </p>
-              <p class="form-note" data-en="No information is stored on this website. Your phone opens a text message containing the details you entered." data-es="Este sitio no guarda su información. Su teléfono abrirá un mensaje de texto con los datos que ingresó.">
-                No information is stored on this website. Your phone opens a text message containing the details you entered.
-              </p>
-            </div>
-          </section>
-        </form>
+        <a class="text-link" href="sms:+19562722071?&body=Hi%20Casa%20Nova!%20I%27m%20interested%20in%20your%20services." data-en="Text Casa Nova" data-es="Enviar Mensaje">Text Casa Nova</a>
       </div>
     </section>
   </main>
-
-  <div class="sticky-contact" aria-label="Quick contact">
-    <a href="tel:+19562722071">📞 <span data-en="Call Now" data-es="Llamar">Call Now</span></a>
-    <a href="sms:+19562722071?&body=Hi%20Casa%20Nova!">💬 <span data-en="Text Us" data-es="Mensaje">Text Us</span></a>
-  </div>
-
-  <footer>
-    <div class="container footer-grid">
-      <div class="brand footer-brand">
-        <svg class="brand-mark" viewBox="0 0 120 70" aria-hidden="true">
-          <path d="M8 40 57 7l49 33h-15L57 18 23 40Z" fill="currentColor"/>
-          <path d="M18 49c29 8 55 8 88-6-21 18-54 25-88 15Z" fill="#1E88E5"/>
-          <rect x="50" y="29" width="14" height="14" rx="1" fill="currentColor"/>
-          <path d="M57 29v14M50 36h14" stroke="#fff" stroke-width="2"/>
-        </svg>
-        <span><strong>CASA NOVA</strong><small data-en="Cleaning & Laundry Services" data-es="Servicios de Limpieza y Lavandería">Cleaning & Laundry Services</small></span>
-      </div>
-      <div class="footer-contact">
-        <a href="tel:+19562722071">(956) 272-2071</a>
-        <span data-en="South Texas and surrounding areas" data-es="Sur de Texas y áreas cercanas">South Texas and surrounding areas</span>
-      </div>
-      <div class="footer-actions">
-        <a href="tel:+19562722071" data-en="Call" data-es="Llamar">Call</a>
-        <a href="sms:+19562722071?&body=Hi%20Casa%20Nova!" data-en="Text" data-es="Mensaje">Text</a>
-      </div>
-      <p>© <span id="year"></span> Casa Nova. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
-    </div>
-  </footer>
 
   <script src="script.js"></script>
 </body>
