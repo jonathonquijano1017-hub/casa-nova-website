@@ -39,31 +39,50 @@ function translatePage(lang) {
 document.querySelectorAll(".lang-btn").forEach(btn => btn.addEventListener("click", () => translatePage(btn.dataset.lang)));
 
 const form = document.getElementById("bookingForm");
+
 if (form) {
-  const serviceInputs = [...document.querySelectorAll('input[name="service"]')];
   const basketSection = document.getElementById("basketSection");
   const basketInput = document.getElementById("baskets");
   const totalEl = document.getElementById("estimatedTotal");
+  const packageSubtotalEl = document.getElementById("packageSubtotal");
+  const laundrySubtotalEl = document.getElementById("laundrySubtotal");
+  const addonsSubtotalEl = document.getElementById("addonsSubtotal");
   const deepClean = document.getElementById("deepClean");
+  const clearPackageButton = document.getElementById("clearPackage");
+  const clearAddonsButton = document.getElementById("clearAddons");
 
   function selectedService() {
     return document.querySelector('input[name="service"]:checked')?.value || "";
   }
 
+  function getAddonsSubtotal() {
+    let subtotal = 0;
+    document.querySelectorAll(".addon input:checked").forEach(input => {
+      subtotal += PRICES.addons[input.value];
+    });
+    return subtotal;
+  }
+
   function calculateTotal() {
     const service = selectedService();
-    let total = service ? PRICES[service] : 0;
+    const packageSubtotal = service ? PRICES[service] : 0;
     const baskets = Math.max(1, Number(basketInput.value || 1));
+    const laundrySubtotal =
+      service === "laundry" || service === "complete"
+        ? Math.max(0, baskets - 1) * PRICES.extraBasket
+        : 0;
+    const addonsSubtotal = getAddonsSubtotal();
+    const total = packageSubtotal + laundrySubtotal + addonsSubtotal;
 
-    if (service === "laundry" || service === "complete") {
-      total += Math.max(0, baskets - 1) * PRICES.extraBasket;
-    }
-
-    document.querySelectorAll(".addon input:checked").forEach(input => {
-      total += PRICES.addons[input.value];
-    });
-
+    packageSubtotalEl.textContent = `$${packageSubtotal}`;
+    laundrySubtotalEl.textContent = `$${laundrySubtotal}`;
+    addonsSubtotalEl.textContent = `$${addonsSubtotal}`;
     totalEl.textContent = `$${total}`;
+
+    clearPackageButton.classList.toggle("active", !service);
+    const hasAddons = document.querySelectorAll(".addon input:checked").length > 0;
+    clearAddonsButton.classList.toggle("active", !hasAddons);
+
     return total;
   }
 
@@ -75,22 +94,59 @@ if (form) {
     calculateTotal();
   }
 
-  document.querySelectorAll(".package-card").forEach(card => {
-    const input = card.querySelector('input[name="service"]');
-    card.addEventListener("click", event => {
-      if (input.checked) {
-        event.preventDefault();
-        input.checked = false;
-        updateBasketVisibility();
-      } else {
-        setTimeout(updateBasketVisibility, 0);
-      }
+  function clearPackageSelection() {
+    document.querySelectorAll('input[name="service"]').forEach(input => {
+      input.checked = false;
     });
-    input.addEventListener("change", updateBasketVisibility);
+    updateBasketVisibility();
+  }
+
+  document.querySelectorAll(".package-card:not(.package-none)").forEach(card => {
+    const input = card.querySelector('input[name="service"]');
+    let wasSelected = false;
+
+    card.addEventListener("pointerdown", () => {
+      wasSelected = input.checked;
+    });
+
+    card.addEventListener("click", event => {
+      event.preventDefault();
+
+      document.querySelectorAll('input[name="service"]').forEach(serviceInput => {
+        serviceInput.checked = false;
+      });
+
+      if (!wasSelected) {
+        input.checked = true;
+      }
+
+      updateBasketVisibility();
+    });
   });
 
+  clearPackageButton.addEventListener("click", clearPackageSelection);
+
+  function clearAllAddons() {
+    document.querySelectorAll(".addon input").forEach(input => {
+      input.checked = false;
+      input.disabled = false;
+    });
+    deepClean.checked = false;
+    calculateTotal();
+  }
+
+  clearAddonsButton.addEventListener("click", clearAllAddons);
+
   basketInput.addEventListener("input", calculateTotal);
-  document.querySelectorAll(".addon input").forEach(input => input.addEventListener("change", calculateTotal));
+
+  document.querySelectorAll(".addon input").forEach(input => {
+    input.addEventListener("change", () => {
+      if (input !== deepClean && input.checked) {
+        clearAddonsButton.classList.remove("active");
+      }
+      calculateTotal();
+    });
+  });
 
   deepClean.addEventListener("change", () => {
     ["bed", "fridge", "microwave"].forEach(value => {
@@ -107,7 +163,9 @@ if (form) {
     const input = document.querySelector(`input[name="service"][value="${preselected}"]`);
     if (input) input.checked = true;
   }
+
   updateBasketVisibility();
+  calculateTotal();
 
   form.addEventListener("submit", event => {
     event.preventDefault();
@@ -120,7 +178,8 @@ if (form) {
 
     const total = calculateTotal();
     const baskets = Number(basketInput.value || 1);
-    const addons = [...document.querySelectorAll(".addon input:checked")].map(input => TEXT[currentLang].addons[input.value]);
+    const addons = [...document.querySelectorAll(".addon input:checked")]
+      .map(input => TEXT[currentLang].addons[input.value]);
 
     const values = {
       name: document.getElementById("name").value.trim(),
@@ -174,6 +233,7 @@ if (form) {
       "Entiendo que esta es una solicitud y no queda confirmada hasta que Casa Nova responda."
     ].join("\n");
 
-    window.location.href = `sms:+19562722071?&body=${encodeURIComponent(currentLang === "es" ? messageEs : messageEn)}`;
+    window.location.href =
+      `sms:+19562722071?&body=${encodeURIComponent(currentLang === "es" ? messageEs : messageEn)}`;
   });
 }

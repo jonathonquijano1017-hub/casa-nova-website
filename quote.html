@@ -49,6 +49,9 @@
             <h2 data-en="Choose a package" data-es="Elija un paquete">Choose a package</h2>
             <p class="tap-note" data-en="Tap a selected package again to deselect it." data-es="Toque nuevamente un paquete seleccionado para quitarlo.">Tap a selected package again to deselect it.</p>
             <div class="package-grid">
+              <button type="button" class="package-card package-none" id="clearPackage">
+                <span><b>✕</b><strong data-en="None" data-es="Ninguno">None</strong><em>$0</em><small data-en="Clear package selection" data-es="Quitar selección de paquete">Clear package selection</small></span>
+              </button>
               <label class="package-card">
                 <input type="radio" name="service" value="laundry">
                 <span><b>🧺</b><strong data-en="Laundry Service" data-es="Servicio de Lavandería">Laundry Service</strong><em>$80</em><small data-en="1 basket included" data-es="1 canasta incluida">1 basket included</small></span>
@@ -72,6 +75,12 @@
             <div id="basketSection" class="basket-control">
               <label><span data-en="Total laundry baskets" data-es="Total de canastas">Total laundry baskets</span><input id="baskets" type="number" min="1" max="20" value="1"></label>
               <small data-en="The first basket is included. Each additional basket is $15." data-es="La primera canasta está incluida. Cada canasta adicional cuesta $15.">The first basket is included. Each additional basket is $15.</small>
+            </div>
+            <div class="addon-none-row">
+              <button type="button" id="clearAddons" class="none-button active">
+                <span data-en="None" data-es="Ninguno">None</span>
+                <small data-en="No add-ons selected" data-es="Sin servicios adicionales">No add-ons selected</small>
+              </button>
             </div>
             <div class="addon-grid">
               <label class="addon"><input type="checkbox" value="bed"><span><strong data-en="Bed Refresh" data-es="Servicio de Cama">Bed Refresh</strong><em>$50</em></span></label>
@@ -113,9 +122,11 @@
         </section>
 
         <section class="quote-summary">
-          <div>
-            <span data-en="Estimated total" data-es="Total estimado">Estimated total</span>
-            <strong id="estimatedTotal">$0</strong>
+          <div class="summary-breakdown">
+            <div><span data-en="Package" data-es="Paquete">Package</span><strong id="packageSubtotal">$0</strong></div>
+            <div><span data-en="Extra laundry" data-es="Lavandería adicional">Extra laundry</span><strong id="laundrySubtotal">$0</strong></div>
+            <div><span data-en="Add-ons" data-es="Servicios adicionales">Add-ons</span><strong id="addonsSubtotal">$0</strong></div>
+            <div class="summary-total"><span data-en="Estimated total" data-es="Total estimado">Estimated total</span><strong id="estimatedTotal">$0</strong></div>
             <small data-en="Final price is confirmed after Casa Nova reviews the request." data-es="El precio final se confirma después de revisar la solicitud.">Final price is confirmed after Casa Nova reviews the request.</small>
           </div>
           <button class="btn btn-primary" type="submit" data-en="Send Quote Request" data-es="Enviar Solicitud">Send Quote Request</button>

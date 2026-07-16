@@ -22,3 +22,17 @@ Upload these files to the ROOT of the existing GitHub repository:
 - hero.jpg
 
 Replace files with the same names.
+
+
+NEW UPDATE:
+- Package cards now reliably select and deselect on iPhone and desktop.
+- Added a None button for package selection.
+- Added a None button for Laundry and Add-ons.
+- None clears every add-on.
+- Selecting any add-on automatically turns off None.
+- If no add-ons are selected, None becomes active again.
+- Added itemized estimated pricing:
+  Package
+  Extra laundry
+  Add-ons
+  Total
