@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Request a Casa Nova quote for cleaning and laundry services.">
+  <meta name="description" content="Request a Casa Nova cleaning or laundry quote.">
   <title>Get a Quote | Casa Nova</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,123 +20,85 @@
           <rect x="50" y="29" width="14" height="14" rx="1" fill="currentColor"/>
           <path d="M57 29v14M50 36h14" stroke="#fff" stroke-width="2"/>
         </svg>
-        <span>
-          <strong>CASA NOVA</strong>
-          <small data-en="Get a Free Quote" data-es="Cotización Gratis">Get a Free Quote</small>
-        </span>
+        <span><strong>CASA NOVA</strong><small>Get a Free Quote</small></span>
       </a>
-
-      <div class="header-actions">
+      <div class="header-right">
         <div class="language-switch">
           <button class="lang-btn active" type="button" data-lang="en">EN</button>
           <button class="lang-btn" type="button" data-lang="es">ES</button>
         </div>
-        <a class="back-link" href="index.html" data-en="← Home" data-es="← Inicio">← Home</a>
+        <a class="back-home" href="index.html" data-en="← Home" data-es="← Inicio">← Home</a>
       </div>
     </div>
   </header>
 
   <main class="quote-main">
-    <div class="container quote-wrap">
-      <div class="quote-heading">
+    <div class="container quote-layout">
+      <section class="quote-intro">
         <p class="eyebrow" data-en="Free Quote Request" data-es="Solicitud de Cotización Gratis">Free Quote Request</p>
-        <h1 data-en="Build your Casa Nova service." data-es="Arme su servicio Casa Nova.">Build your Casa Nova service.</h1>
-        <p data-en="Choose a package, add extras, and see your estimated total before sending the request." data-es="Elija un paquete, agregue extras y vea su total estimado antes de enviar la solicitud.">
-          Choose a package, add extras, and see your estimated total before sending the request.
+        <h1 data-en="Choose your Casa Nova service." data-es="Elija su servicio Casa Nova.">Choose your Casa Nova service.</h1>
+        <p data-en="Select a package, add any extras, and see your estimated total before sending your request." data-es="Seleccione un paquete, agregue extras y vea su total estimado antes de enviar su solicitud.">
+          Select a package, add any extras, and see your estimated total before sending your request.
         </p>
-      </div>
+      </section>
 
-      <form id="bookingForm" class="quote-card">
-        <section class="quote-step">
-          <div class="step-number">1</div>
-          <div class="step-body">
-            <h2 data-en="Select your service" data-es="Seleccione su servicio">Select your service</h2>
-            <p class="step-note" data-en="Tap once to select. Tap the selected package again to deselect it." data-es="Toque una vez para seleccionar. Toque nuevamente el paquete seleccionado para quitarlo.">
-              Tap once to select. Tap the selected package again to deselect it.
-            </p>
-
-            <div class="service-select-grid">
-              <label class="service-choice">
+      <form id="bookingForm" class="booking-card">
+        <section class="quote-section">
+          <div class="section-number">1</div>
+          <div class="section-body">
+            <h2 data-en="Choose a package" data-es="Elija un paquete">Choose a package</h2>
+            <p class="tap-note" data-en="Tap a selected package again to deselect it." data-es="Toque nuevamente un paquete seleccionado para quitarlo.">Tap a selected package again to deselect it.</p>
+            <div class="package-grid">
+              <label class="package-card">
                 <input type="radio" name="service" value="laundry">
-                <span>
-                  <b>🧺</b>
-                  <strong data-en="Laundry" data-es="Lavandería">Laundry</strong>
-                  <em>$80</em>
-                  <small data-en="1 basket included" data-es="1 canasta incluida">1 basket included</small>
-                </span>
+                <span><b>🧺</b><strong data-en="Laundry Service" data-es="Servicio de Lavandería">Laundry Service</strong><em>$80</em><small data-en="1 basket included" data-es="1 canasta incluida">1 basket included</small></span>
               </label>
-
-              <label class="service-choice">
+              <label class="package-card">
                 <input type="radio" name="service" value="cleaning">
-                <span>
-                  <b>🧼</b>
-                  <strong data-en="Trailer Cleaning" data-es="Limpieza de Tráiler">Trailer Cleaning</strong>
-                  <em>$80</em>
-                  <small data-en="Standard cleaning" data-es="Limpieza estándar">Standard cleaning</small>
-                </span>
+                <span><b>🧼</b><strong data-en="Trailer Cleaning" data-es="Limpieza de Tráiler">Trailer Cleaning</strong><em>$80</em><small data-en="Standard cleaning" data-es="Limpieza estándar">Standard cleaning</small></span>
               </label>
-
-              <label class="service-choice">
+              <label class="package-card">
                 <input type="radio" name="service" value="complete">
-                <span>
-                  <b>✨</b>
-                  <strong data-en="Complete Refresh" data-es="Paquete Completo">Complete Refresh</strong>
-                  <em>$135</em>
-                  <small data-en="Save $25" data-es="Ahorre $25">Save $25</small>
-                </span>
+                <span><b>✨</b><strong data-en="Complete Refresh" data-es="Paquete Completo">Complete Refresh</strong><em>$135</em><small data-en="Save $25" data-es="Ahorre $25">Save $25</small></span>
               </label>
             </div>
           </div>
         </section>
 
-        <section class="quote-step">
-          <div class="step-number">2</div>
-          <div class="step-body">
+        <section class="quote-section">
+          <div class="section-number">2</div>
+          <div class="section-body">
             <h2 data-en="Laundry and add-ons" data-es="Lavandería y extras">Laundry and add-ons</h2>
-
-            <div id="basketSection" class="basket-section">
-              <label>
-                <span data-en="Total laundry baskets" data-es="Total de canastas">Total laundry baskets</span>
-                <input id="baskets" type="number" min="1" max="20" value="1">
-              </label>
-              <small data-en="The first basket is included. Each additional basket is $15." data-es="La primera canasta está incluida. Cada canasta adicional cuesta $15.">
-                The first basket is included. Each additional basket is $15.
-              </small>
+            <div id="basketSection" class="basket-control">
+              <label><span data-en="Total laundry baskets" data-es="Total de canastas">Total laundry baskets</span><input id="baskets" type="number" min="1" max="20" value="1"></label>
+              <small data-en="The first basket is included. Each additional basket is $15." data-es="La primera canasta está incluida. Cada canasta adicional cuesta $15.">The first basket is included. Each additional basket is $15.</small>
             </div>
-
             <div class="addon-grid">
-              <label class="addon-choice"><input type="checkbox" value="bed"><span><strong data-en="Bed Refresh" data-es="Servicio de Cama">Bed Refresh</strong><em>$50</em></span></label>
-              <label class="addon-choice"><input type="checkbox" value="fridge"><span><strong data-en="Refrigerator Cleaning" data-es="Limpieza de Refrigerador">Refrigerator Cleaning</strong><em>$50</em></span></label>
-              <label class="addon-choice"><input type="checkbox" value="microwave"><span><strong data-en="Microwave Cleaning" data-es="Limpieza de Microondas">Microwave Cleaning</strong><em>$20</em></span></label>
-              <label class="addon-choice"><input type="checkbox" value="pet"><span><strong data-en="Pet Hair Removal" data-es="Eliminación de Pelo de Mascota">Pet Hair Removal</strong><em>$25</em></span></label>
-              <label class="addon-choice"><input type="checkbox" value="kitchen"><span><strong data-en="Kitchen Organization" data-es="Organización de Cocina">Kitchen Organization</strong><em>$25</em></span></label>
-              <label class="addon-choice"><input id="deepClean" type="checkbox" value="deep"><span><strong data-en="Deep Clean Upgrade" data-es="Limpieza Profunda">Deep Clean Upgrade</strong><em>$80</em></span></label>
+              <label class="addon"><input type="checkbox" value="bed"><span><strong data-en="Bed Refresh" data-es="Servicio de Cama">Bed Refresh</strong><em>$50</em></span></label>
+              <label class="addon"><input type="checkbox" value="fridge"><span><strong data-en="Refrigerator" data-es="Refrigerador">Refrigerator</strong><em>$50</em></span></label>
+              <label class="addon"><input type="checkbox" value="microwave"><span><strong data-en="Microwave" data-es="Microondas">Microwave</strong><em>$20</em></span></label>
+              <label class="addon"><input type="checkbox" value="pet"><span><strong data-en="Pet Hair Removal" data-es="Pelo de Mascota">Pet Hair Removal</strong><em>$25</em></span></label>
+              <label class="addon"><input type="checkbox" value="kitchen"><span><strong data-en="Kitchen Organization" data-es="Organización de Cocina">Kitchen Organization</strong><em>$25</em></span></label>
+              <label class="addon"><input id="deepClean" type="checkbox" value="deep"><span><strong data-en="Deep Clean Upgrade" data-es="Limpieza Profunda">Deep Clean Upgrade</strong><em>$80</em></span></label>
             </div>
-
-            <p class="small-note" data-en="Deep Clean includes Bed Refresh, refrigerator cleaning, microwave cleaning, and extra detailing." data-es="La Limpieza Profunda incluye Servicio de Cama, limpieza de refrigerador, limpieza de microondas y detallado adicional.">
-              Deep Clean includes Bed Refresh, refrigerator cleaning, microwave cleaning, and extra detailing.
-            </p>
           </div>
         </section>
 
-        <section class="quote-step">
-          <div class="step-number">3</div>
-          <div class="step-body fields">
+        <section class="quote-section">
+          <div class="section-number">3</div>
+          <div class="section-body form-fields">
             <h2 data-en="Your information" data-es="Su información">Your information</h2>
             <label><span data-en="Name" data-es="Nombre">Name</span><input id="name" type="text" required placeholder="Your name"></label>
             <label><span data-en="Phone" data-es="Teléfono">Phone</span><input id="phone" type="tel" required placeholder="Your phone number"></label>
             <label><span data-en="Address or RV park" data-es="Dirección o parque de RV">Address or RV park</span><input id="address" type="text" placeholder="Service location"></label>
-
             <div class="two-col">
               <label><span data-en="Bedrooms" data-es="Recámaras">Bedrooms</span><input id="bedrooms" type="number" min="0" value="1"></label>
               <label><span data-en="Bathrooms" data-es="Baños">Bathrooms</span><input id="bathrooms" type="number" min="0" step="0.5" value="1"></label>
             </div>
-
             <div class="two-col">
               <label><span data-en="Pets?" data-es="¿Mascotas?">Pets?</span><select id="pets"><option value="No">No</option><option value="Yes">Yes</option></select></label>
               <label><span data-en="Preferred date" data-es="Fecha preferida">Preferred date</span><input id="date" type="date"></label>
             </div>
-
             <label><span data-en="Detergent preference" data-es="Preferencia de detergente">Detergent preference</span>
               <select id="detergent">
                 <option value="No preference">No preference</option>
@@ -146,18 +108,15 @@
                 <option value="Free & Clear">Free & Clear</option>
               </select>
             </label>
-
             <label><span data-en="Notes" data-es="Notas">Notes</span><textarea id="notes" rows="4" placeholder="Access instructions, condition, timing, or special requests"></textarea></label>
           </div>
         </section>
 
-        <section class="quote-footer">
-          <div class="total-box">
+        <section class="quote-summary">
+          <div>
             <span data-en="Estimated total" data-es="Total estimado">Estimated total</span>
             <strong id="estimatedTotal">$0</strong>
-            <small data-en="Final pricing is confirmed after Casa Nova reviews the request." data-es="El precio final se confirma después de revisar la solicitud.">
-              Final pricing is confirmed after Casa Nova reviews the request.
-            </small>
+            <small data-en="Final price is confirmed after Casa Nova reviews the request." data-es="El precio final se confirma después de revisar la solicitud.">Final price is confirmed after Casa Nova reviews the request.</small>
           </div>
           <button class="btn btn-primary" type="submit" data-en="Send Quote Request" data-es="Enviar Solicitud">Send Quote Request</button>
         </section>
