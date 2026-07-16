@@ -1,21 +1,22 @@
-CASA NOVA WEBSITE
+CASA NOVA WEBSITE — UPDATED VERSION
 
-Files:
+Updated features:
+- Improved mobile layout and larger text
+- Real Casa Nova hero image
+- English / Spanish language switch
+- Clear service limits and pricing notes
+- Booking form with automatic estimated total
+- Additional basket calculation
+- Add-ons placed inside booking form
+- Deep Clean prevents duplicate Bed / Refrigerator / Microwave charges
+- Clear appointment-confirmation language
+- Updated 24-hour satisfaction guarantee wording
+- Call and text actions using (956) 272-2071
+
+Files to upload to GitHub:
 - index.html
 - styles.css
 - script.js
+- hero-casa-nova.jpg
 
-How to preview:
-Open index.html in a web browser.
-
-How to publish:
-Upload all three files to the same folder on a web host such as Netlify, Cloudflare Pages, GitHub Pages, Squarespace custom code hosting, or your own domain host.
-
-Current booking method:
-The booking form opens a prewritten text message to (956) 272-2071. No customer information is stored online.
-
-Before publishing:
-1. Confirm all prices and service descriptions.
-2. Replace or remove any claims such as “insured” until the business is actually insured.
-3. Add a real business email and domain when available.
-4. Add real service-area details and business hours.
+Upload these four files to the ROOT of the existing casa-nova-website repository and replace the existing files with the same names.

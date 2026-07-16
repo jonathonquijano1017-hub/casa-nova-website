@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Casa Nova provides professional trailer cleaning and laundry pickup, wash, dry, fold, and return services in South Texas." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Casa Nova provides professional trailer cleaning and laundry pickup, wash, dry, fold, and return services in South Texas.">
   <title>Casa Nova | Cleaning & Laundry Services</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
@@ -21,15 +21,25 @@
           <path d="M57 29v14M50 36h14" stroke="#fff" stroke-width="2"/>
           <path d="m102 14 2.5 6.5L111 23l-6.5 2.5L102 32l-2.5-6.5L93 23l6.5-2.5Z" fill="#D4A017"/>
         </svg>
-        <span><strong>CASA NOVA</strong><small>Cleaning & Laundry Services</small></span>
+        <span>
+          <strong>CASA NOVA</strong>
+          <small data-en="Cleaning & Laundry Services" data-es="Servicios de Limpieza y Lavandería">Cleaning & Laundry Services</small>
+        </span>
       </a>
-      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language selection">
+          <button class="lang-btn active" type="button" data-lang="en">EN</button>
+          <button class="lang-btn" type="button" data-lang="es">ES</button>
+        </div>
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+
       <nav class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#addons">Add-ons</a>
-        <a href="#how">How It Works</a>
-        <a href="#book">Book</a>
-        <a class="nav-call" href="tel:+19562722071">Call (956) 272-2071</a>
+        <a href="#services" data-en="Services" data-es="Servicios">Services</a>
+        <a href="#how" data-en="How It Works" data-es="Cómo Funciona">How It Works</a>
+        <a href="#book" data-en="Request Service" data-es="Solicitar Servicio">Request Service</a>
+        <a class="nav-call" href="tel:+19562722071" data-en="Call (956) 272-2071" data-es="Llame al (956) 272-2071">Call (956) 272-2071</a>
       </nav>
     </div>
   </header>
@@ -38,23 +48,28 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Professional cleaning & laundry service</p>
-          <h1>A cleaner home.<br><span>More time for you.</span></h1>
-          <p class="hero-text">Casa Nova helps busy workers, travelers, and families come home to a clean space and fresh, folded laundry.</p>
+          <p class="eyebrow" data-en="Professional cleaning & laundry service" data-es="Servicio profesional de limpieza y lavandería">Professional cleaning & laundry service</p>
+          <h1 data-en="Come home to clean." data-es="Regrese a un hogar limpio.">Come home to clean.</h1>
+          <p class="hero-tagline" data-en="You work hard. We handle the rest." data-es="Usted trabaja duro. Nosotros nos encargamos del resto.">You work hard. We handle the rest.</p>
+          <p class="hero-text" data-en="Trailer cleaning and laundry pickup, washing, drying, folding, and return for busy workers, travelers, and families in South Texas." data-es="Limpieza de tráiler y servicio de recolección, lavado, secado, doblado y entrega de ropa para trabajadores, viajeros y familias del sur de Texas.">
+            Trailer cleaning and laundry pickup, washing, drying, folding, and return for busy workers, travelers, and families in South Texas.
+          </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#book">Book a Service</a>
-            <a class="btn btn-secondary" href="sms:+19562722071?&body=Hi%20Casa%20Nova!%20I%27m%20interested%20in%20your%20cleaning%20and%20laundry%20services.">Text Us</a>
+            <a class="btn btn-primary" href="#book" data-en="Request an Appointment" data-es="Solicitar una Cita">Request an Appointment</a>
+            <a class="btn btn-secondary" href="sms:+19562722071?&body=Hi%20Casa%20Nova!%20I%27m%20interested%20in%20your%20services." data-en="Text Casa Nova" data-es="Enviar Mensaje">Text Casa Nova</a>
           </div>
           <div class="trust-row">
-            <span>✓ Reliable</span><span>✓ Flat-rate pricing</span><span>✓ Satisfaction guarantee</span>
+            <span data-en="✓ Reliable service" data-es="✓ Servicio confiable">✓ Reliable service</span>
+            <span data-en="✓ Clear pricing" data-es="✓ Precios claros">✓ Clear pricing</span>
+            <span data-en="✓ Detergent included" data-es="✓ Detergente incluido">✓ Detergent included</span>
           </div>
         </div>
-        <div class="hero-card">
-          <div class="basket" aria-hidden="true">
-            <div class="towel t1"></div><div class="towel t2"></div><div class="towel t3"></div>
-            <div class="basket-body"></div>
+        <div class="hero-photo-wrap">
+          <img src="hero-casa-nova.jpg" alt="Fresh folded towels in a clean bedroom">
+          <div class="hero-photo-badge">
+            <strong data-en="A cleaner home." data-es="Un hogar más limpio.">A cleaner home.</strong>
+            <span data-en="More time for you." data-es="Más tiempo para usted.">More time for you.</span>
           </div>
-          <p class="quote">“You work hard.<br>We handle the rest.”</p>
         </div>
       </div>
     </section>
@@ -62,81 +77,72 @@
     <section id="services" class="section">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Our services</p>
-          <h2>Simple pricing. No guesswork.</h2>
+          <p class="eyebrow" data-en="Services and pricing" data-es="Servicios y precios">Services and pricing</p>
+          <h2 data-en="Simple prices. Clear limits." data-es="Precios sencillos. Límites claros.">Simple prices. Clear limits.</h2>
+          <p data-en="Every final price is confirmed before work begins." data-es="El precio final se confirma antes de comenzar el trabajo.">Every final price is confirmed before work begins.</p>
         </div>
+
         <div class="cards">
           <article class="service-card">
             <div class="icon">🧺</div>
-            <h3>Laundry Service</h3>
+            <h3 data-en="Laundry Service" data-es="Servicio de Lavandería">Laundry Service</h3>
             <p class="price">$80</p>
             <ul>
-              <li>Pickup from your trailer or home</li>
-              <li>Premium detergent included</li>
-              <li>Wash, dry, fold, and return</li>
-              <li>Includes 1 standard basket</li>
+              <li data-en="Pickup, wash, dry, fold, and return" data-es="Recolección, lavado, secado, doblado y entrega">Pickup, wash, dry, fold, and return</li>
+              <li data-en="Premium detergent included" data-es="Detergente premium incluido">Premium detergent included</li>
+              <li data-en="Includes 1 standard laundry basket" data-es="Incluye 1 canasta estándar de ropa">Includes 1 standard laundry basket</li>
+              <li data-en="Each additional basket: +$15" data-es="Cada canasta adicional: +$15">Each additional basket: +$15</li>
             </ul>
-            <p class="fine">Additional baskets: <strong>+$15 each</strong></p>
-            <button class="select-service" data-service="Laundry Service — $80">Choose Laundry</button>
+            <button class="select-service" type="button" data-service="laundry" data-en="Choose Laundry" data-es="Elegir Lavandería">Choose Laundry</button>
           </article>
 
           <article class="service-card">
             <div class="icon">🧼</div>
-            <h3>Standard Trailer Cleaning</h3>
+            <h3 data-en="Standard Trailer Cleaning" data-es="Limpieza Estándar de Tráiler">Standard Trailer Cleaning</h3>
             <p class="price">$80</p>
             <ul>
-              <li>Vacuum and mop floors</li>
-              <li>Kitchen and countertops</li>
-              <li>Bathroom, toilet, shower/tub</li>
-              <li>Dusting, trash, high-touch surfaces</li>
+              <li data-en="Vacuum and mop floors" data-es="Aspirar y trapear pisos">Vacuum and mop floors</li>
+              <li data-en="Kitchen, counters, sink, and surfaces" data-es="Cocina, mostradores, fregadero y superficies">Kitchen, counters, sink, and surfaces</li>
+              <li data-en="Bathroom, toilet, and shower/tub" data-es="Baño, inodoro y regadera/tina">Bathroom, toilet, and shower/tub</li>
+              <li data-en="For regularly maintained trailers" data-es="Para tráileres con mantenimiento regular">For regularly maintained trailers</li>
             </ul>
-            <button class="select-service" data-service="Standard Trailer Cleaning — $80">Choose Cleaning</button>
+            <button class="select-service" type="button" data-service="cleaning" data-en="Choose Cleaning" data-es="Elegir Limpieza">Choose Cleaning</button>
           </article>
 
           <article class="service-card featured">
-            <div class="popular">Most Popular</div>
+            <div class="popular" data-en="Most Popular" data-es="Más Popular">Most Popular</div>
             <div class="icon">✨</div>
-            <h3>Complete Refresh Package</h3>
+            <h3 data-en="Complete Refresh Package" data-es="Paquete Completo Casa Nova">Complete Refresh Package</h3>
             <p class="price">$135</p>
             <ul>
-              <li>Laundry pickup, wash, dry, fold, and return</li>
-              <li>Standard trailer cleaning</li>
-              <li>Save $25 versus buying separately</li>
+              <li data-en="Laundry service with 1 basket included" data-es="Lavandería con 1 canasta incluida">Laundry service with 1 basket included</li>
+              <li data-en="Standard trailer cleaning" data-es="Limpieza estándar de tráiler">Standard trailer cleaning</li>
+              <li data-en="Save $25 versus purchasing separately" data-es="Ahorre $25 comparado con comprarlos por separado">Save $25 versus purchasing separately</li>
             </ul>
-            <button class="select-service" data-service="Complete Refresh Package — $135">Choose Complete Refresh</button>
+            <button class="select-service" type="button" data-service="complete" data-en="Choose Complete Refresh" data-es="Elegir Paquete Completo">Choose Complete Refresh</button>
           </article>
         </div>
-      </div>
-    </section>
 
-    <section id="addons" class="section section-alt">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Add-on services</p>
-          <h2>Customize your refresh</h2>
-        </div>
-        <div class="addon-grid">
-          <label class="addon"><input type="checkbox" value="Bed Refresh — $50"><span>🛏️ <strong>Bed Refresh</strong><em>$50</em></span></label>
-          <label class="addon"><input type="checkbox" value="Refrigerator Cleaning — $50"><span>🧊 <strong>Refrigerator Cleaning</strong><em>$50</em></span></label>
-          <label class="addon"><input type="checkbox" value="Microwave Cleaning — $20"><span>🍽️ <strong>Microwave Cleaning</strong><em>$20</em></span></label>
-          <label class="addon"><input type="checkbox" value="Pet Hair Removal — $25"><span>🐾 <strong>Pet Hair Removal</strong><em>$25</em></span></label>
-          <label class="addon"><input type="checkbox" value="Kitchen Organization — $25"><span>🍴 <strong>Kitchen Organization</strong><em>$25</em></span></label>
-          <label class="addon"><input type="checkbox" value="Deep Clean Upgrade — $80"><span>💫 <strong>Deep Clean Upgrade</strong><em>$80</em></span></label>
+        <div class="service-note">
+          <strong data-en="Important:" data-es="Importante:">Important:</strong>
+          <span data-en="Extreme buildup, hazardous materials, pests, mold, or conditions not disclosed before arrival are not included in standard pricing and may be declined or quoted separately." data-es="La acumulación extrema, materiales peligrosos, plagas, moho o condiciones no informadas antes de la llegada no están incluidas en el precio estándar y pueden rechazarse o cotizarse por separado.">
+            Extreme buildup, hazardous materials, pests, mold, or conditions not disclosed before arrival are not included in standard pricing and may be declined or quoted separately.
+          </span>
         </div>
       </div>
     </section>
 
-    <section id="how" class="section">
+    <section id="how" class="section section-alt">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">How it works</p>
-          <h2>Easy from start to finish</h2>
+          <p class="eyebrow" data-en="How it works" data-es="Cómo funciona">How it works</p>
+          <h2 data-en="Easy from start to finish" data-es="Fácil de principio a fin">Easy from start to finish</h2>
         </div>
         <div class="steps">
-          <div class="step"><b>1</b><h3>Choose your service</h3><p>Select cleaning, laundry, or the complete package.</p></div>
-          <div class="step"><b>2</b><h3>Schedule your visit</h3><p>Tell us about your trailer, laundry, pets, and timing.</p></div>
-          <div class="step"><b>3</b><h3>We handle the work</h3><p>We clean carefully and return your laundry fresh and folded.</p></div>
-          <div class="step"><b>4</b><h3>You relax</h3><p>Come home to a refreshed space and more free time.</p></div>
+          <div class="step"><b>1</b><h3 data-en="Choose your service" data-es="Elija su servicio">Choose your service</h3><p data-en="Select cleaning, laundry, or the complete package." data-es="Elija limpieza, lavandería o el paquete completo.">Select cleaning, laundry, or the complete package.</p></div>
+          <div class="step"><b>2</b><h3 data-en="Tell us the details" data-es="Comparta los detalles">Tell us the details</h3><p data-en="Tell us about baskets, bedrooms, bathrooms, pets, and access." data-es="Díganos sobre canastas, recámaras, baños, mascotas y acceso.">Tell us about baskets, bedrooms, bathrooms, pets, and access.</p></div>
+          <div class="step"><b>3</b><h3 data-en="We confirm the price" data-es="Confirmamos el precio">We confirm the price</h3><p data-en="Your appointment and final price are confirmed before service." data-es="Su cita y precio final se confirman antes del servicio.">Your appointment and final price are confirmed before service.</p></div>
+          <div class="step"><b>4</b><h3 data-en="You relax" data-es="Usted se relaja">You relax</h3><p data-en="Come home to a refreshed space and fresh, folded laundry." data-es="Regrese a un espacio renovado y ropa limpia y doblada.">Come home to a refreshed space and fresh, folded laundry.</p></div>
         </div>
       </div>
     </section>
@@ -144,48 +150,117 @@
     <section class="guarantee">
       <div class="container guarantee-grid">
         <div>
-          <p class="eyebrow light">Casa Nova Guarantee</p>
-          <h2>Your satisfaction is our priority.</h2>
+          <p class="eyebrow light" data-en="Casa Nova Guarantee" data-es="Garantía Casa Nova">Casa Nova Guarantee</p>
+          <h2 data-en="Your satisfaction is our priority." data-es="Su satisfacción es nuestra prioridad.">Your satisfaction is our priority.</h2>
         </div>
-        <p>If you are not completely satisfied, contact us within 24 hours and we will return to make it right at no additional charge.</p>
+        <p data-en="Contact us within 24 hours if an included area was missed, and we will return to correct that area at no additional charge. This does not cover new messes, added services, or conditions that were not disclosed before the appointment." data-es="Contáctenos dentro de 24 horas si se omitió un área incluida y regresaremos a corregirla sin costo adicional. Esto no cubre nuevos desórdenes, servicios adicionales ni condiciones que no se informaron antes de la cita.">
+          Contact us within 24 hours if an included area was missed, and we will return to correct that area at no additional charge. This does not cover new messes, added services, or conditions that were not disclosed before the appointment.
+        </p>
       </div>
     </section>
 
     <section id="book" class="section">
       <div class="container booking-grid">
-        <div>
-          <p class="eyebrow">Book today</p>
-          <h2>Ready for your Casa Nova refresh?</h2>
-          <p>Complete this quick form. When you tap “Send Booking Request,” your phone will open a prewritten text message to Casa Nova.</p>
+        <div class="booking-copy">
+          <p class="eyebrow" data-en="Request service" data-es="Solicitar servicio">Request service</p>
+          <h2 data-en="Build your Casa Nova refresh." data-es="Arme su servicio Casa Nova.">Build your Casa Nova refresh.</h2>
+          <p data-en="Choose a service and add-ons to see an estimated total. Sending the request opens a prewritten text message to Casa Nova." data-es="Elija un servicio y extras para ver un total estimado. Al enviar la solicitud se abrirá un mensaje de texto preparado para Casa Nova.">
+            Choose a service and add-ons to see an estimated total. Sending the request opens a prewritten text message to Casa Nova.
+          </p>
           <div class="contact-card">
-            <strong>Call or text</strong>
+            <strong data-en="Call or text" data-es="Llame o envíe mensaje">Call or text</strong>
             <a href="tel:+19562722071">(956) 272-2071</a>
-            <span>Proudly serving South Texas and surrounding areas</span>
+            <span data-en="Proudly serving South Texas and surrounding areas" data-es="Con orgullo sirviendo al sur de Texas y áreas cercanas">Proudly serving South Texas and surrounding areas</span>
           </div>
         </div>
 
         <form id="bookingForm" class="booking-form">
-          <label>Name<input id="name" type="text" required placeholder="Your name"></label>
-          <label>Phone<input id="phone" type="tel" required placeholder="Your phone number"></label>
-          <label>Address or RV park<input id="address" type="text" placeholder="Service location"></label>
-          <label>Service
-            <select id="service" required>
-              <option value="">Choose a service</option>
-              <option>Laundry Service — $80</option>
-              <option>Standard Trailer Cleaning — $80</option>
-              <option>Complete Refresh Package — $135</option>
-            </select>
-          </label>
-          <div class="form-row">
-            <label>Laundry baskets<input id="baskets" type="number" min="0" value="1"></label>
-            <label>Pets?
-              <select id="pets"><option>No</option><option>Yes</option></select>
-            </label>
+          <div class="form-section">
+            <h3 data-en="1. Select your main service" data-es="1. Elija su servicio principal">1. Select your main service</h3>
+            <div class="service-options">
+              <label class="choice-card">
+                <input type="radio" name="service" value="laundry" required>
+                <span><strong data-en="Laundry Service" data-es="Servicio de Lavandería">Laundry Service</strong><em>$80</em></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="service" value="cleaning">
+                <span><strong data-en="Trailer Cleaning" data-es="Limpieza de Tráiler">Trailer Cleaning</strong><em>$80</em></span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="service" value="complete">
+                <span><strong data-en="Complete Refresh" data-es="Paquete Completo">Complete Refresh</strong><em>$135</em></span>
+              </label>
+            </div>
           </div>
-          <label>Preferred date<input id="date" type="date"></label>
-          <label>Notes<textarea id="notes" rows="4" placeholder="Bedrooms, bathrooms, detergent preference, access instructions, or special requests"></textarea></label>
-          <button class="btn btn-primary full" type="submit">Send Booking Request</button>
-          <p class="form-note">Submitting opens your phone's text-message app. No information is stored on this website.</p>
+
+          <div class="form-section" id="basketSection">
+            <h3 data-en="2. Laundry baskets" data-es="2. Canastas de ropa">2. Laundry baskets</h3>
+            <label>
+              <span data-en="Total number of standard baskets" data-es="Número total de canastas estándar">Total number of standard baskets</span>
+              <input id="baskets" type="number" min="1" max="20" value="1">
+            </label>
+            <p class="helper" data-en="The first basket is included with Laundry or Complete Refresh. Each additional basket is $15." data-es="La primera canasta está incluida con Lavandería o Paquete Completo. Cada canasta adicional cuesta $15.">
+              The first basket is included with Laundry or Complete Refresh. Each additional basket is $15.
+            </p>
+          </div>
+
+          <div class="form-section">
+            <h3 data-en="3. Choose add-ons" data-es="3. Elija servicios adicionales">3. Choose add-ons</h3>
+            <div class="addon-grid booking-addons">
+              <label class="addon"><input type="checkbox" value="bed" data-price="50"><span>🛏️ <strong data-en="Bed Refresh" data-es="Servicio de Cama">Bed Refresh</strong><em>$50</em></span></label>
+              <label class="addon"><input type="checkbox" value="fridge" data-price="50"><span>🧊 <strong data-en="Refrigerator Cleaning" data-es="Limpieza de Refrigerador">Refrigerator Cleaning</strong><em>$50</em></span></label>
+              <label class="addon"><input type="checkbox" value="microwave" data-price="20"><span>🍽️ <strong data-en="Microwave Cleaning" data-es="Limpieza de Microondas">Microwave Cleaning</strong><em>$20</em></span></label>
+              <label class="addon"><input type="checkbox" value="pet" data-price="25"><span>🐾 <strong data-en="Pet Hair Removal" data-es="Eliminación de Pelo de Mascota">Pet Hair Removal</strong><em>$25</em></span></label>
+              <label class="addon"><input type="checkbox" value="kitchen" data-price="25"><span>🍴 <strong data-en="Kitchen Organization" data-es="Organización de Cocina">Kitchen Organization</strong><em>$25</em></span></label>
+              <label class="addon deep-addon"><input id="deepClean" type="checkbox" value="deep" data-price="80"><span>💫 <strong data-en="Deep Clean Upgrade" data-es="Limpieza Profunda">Deep Clean Upgrade</strong><em>$80</em></span></label>
+            </div>
+            <p class="helper" data-en="Deep Clean includes Bed Refresh, refrigerator cleaning, microwave cleaning, and extra detailing. Those three individual add-ons will be turned off when Deep Clean is selected." data-es="La Limpieza Profunda incluye Servicio de Cama, limpieza de refrigerador, limpieza de microondas y detallado adicional. Esos tres extras individuales se desactivarán al elegir Limpieza Profunda.">
+              Deep Clean includes Bed Refresh, refrigerator cleaning, microwave cleaning, and extra detailing. Those three individual add-ons will be turned off when Deep Clean is selected.
+            </p>
+          </div>
+
+          <div class="estimate-box" aria-live="polite">
+            <span data-en="Estimated total" data-es="Total estimado">Estimated total</span>
+            <strong id="estimatedTotal">$0</strong>
+            <small data-en="Final pricing is confirmed after Casa Nova reviews the request and condition of the service area." data-es="El precio final se confirma después de que Casa Nova revise la solicitud y la condición del área de servicio.">
+              Final pricing is confirmed after Casa Nova reviews the request and condition of the service area.
+            </small>
+          </div>
+
+          <div class="form-section">
+            <h3 data-en="4. Your information" data-es="4. Su información">4. Your information</h3>
+            <label><span data-en="Name" data-es="Nombre">Name</span><input id="name" type="text" required placeholder="Your name"></label>
+            <label><span data-en="Phone" data-es="Teléfono">Phone</span><input id="phone" type="tel" required placeholder="Your phone number"></label>
+            <label><span data-en="Address or RV park" data-es="Dirección o parque de RV">Address or RV park</span><input id="address" type="text" placeholder="Service location"></label>
+            <div class="form-row">
+              <label><span data-en="Bedrooms" data-es="Recámaras">Bedrooms</span><input id="bedrooms" type="number" min="0" value="1"></label>
+              <label><span data-en="Bathrooms" data-es="Baños">Bathrooms</span><input id="bathrooms" type="number" min="0" step="0.5" value="1"></label>
+            </div>
+            <div class="form-row">
+              <label><span data-en="Pets?" data-es="¿Mascotas?">Pets?</span>
+                <select id="pets"><option value="No">No</option><option value="Yes">Yes</option></select>
+              </label>
+              <label><span data-en="Preferred date" data-es="Fecha preferida">Preferred date</span><input id="date" type="date"></label>
+            </div>
+            <label><span data-en="Detergent preference" data-es="Preferencia de detergente">Detergent preference</span>
+              <select id="detergent">
+                <option value="No preference" data-en="No preference" data-es="Sin preferencia">No preference</option>
+                <option value="Tide">Tide</option>
+                <option value="Gain">Gain</option>
+                <option value="Arm & Hammer">Arm & Hammer</option>
+                <option value="Free & Clear">Free & Clear</option>
+              </select>
+            </label>
+            <label><span data-en="Notes" data-es="Notas">Notes</span><textarea id="notes" rows="4" placeholder="Access instructions, condition, timing, or special requests"></textarea></label>
+          </div>
+
+          <button class="btn btn-primary full" type="submit" data-en="Request an Appointment" data-es="Solicitar una Cita">Request an Appointment</button>
+          <p class="confirmation-note" data-en="This request does not confirm an appointment. Casa Nova must respond and confirm availability, condition, and final pricing." data-es="Esta solicitud no confirma una cita. Casa Nova debe responder y confirmar disponibilidad, condición y precio final.">
+            This request does not confirm an appointment. Casa Nova must respond and confirm availability, condition, and final pricing.
+          </p>
+          <p class="form-note" data-en="No information is stored on this website. Your phone opens a text message containing the details you entered." data-es="Este sitio no guarda su información. Su teléfono abrirá un mensaje de texto con los datos que ingresó.">
+            No information is stored on this website. Your phone opens a text message containing the details you entered.
+          </p>
         </form>
       </div>
     </section>
@@ -200,10 +275,17 @@
           <rect x="50" y="29" width="14" height="14" rx="1" fill="currentColor"/>
           <path d="M57 29v14M50 36h14" stroke="#fff" stroke-width="2"/>
         </svg>
-        <span><strong>CASA NOVA</strong><small>Cleaning & Laundry Services</small></span>
+        <span><strong>CASA NOVA</strong><small data-en="Cleaning & Laundry Services" data-es="Servicios de Limpieza y Lavandería">Cleaning & Laundry Services</small></span>
       </div>
-      <div><a href="tel:+19562722071">(956) 272-2071</a><br><span>South Texas</span></div>
-      <p>© <span id="year"></span> Casa Nova. All rights reserved.</p>
+      <div class="footer-contact">
+        <a href="tel:+19562722071">(956) 272-2071</a>
+        <span data-en="South Texas and surrounding areas" data-es="Sur de Texas y áreas cercanas">South Texas and surrounding areas</span>
+      </div>
+      <div class="footer-actions">
+        <a href="tel:+19562722071" data-en="Call" data-es="Llamar">Call</a>
+        <a href="sms:+19562722071?&body=Hi%20Casa%20Nova!" data-en="Text" data-es="Mensaje">Text</a>
+      </div>
+      <p>© <span id="year"></span> Casa Nova. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
     </div>
   </footer>
 
