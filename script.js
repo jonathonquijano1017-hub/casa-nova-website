@@ -47,6 +47,7 @@ if (form) {
   const packageSubtotalEl = document.getElementById("packageSubtotal");
   const laundrySubtotalEl = document.getElementById("laundrySubtotal");
   const addonsSubtotalEl = document.getElementById("addonsSubtotal");
+  const frequencyDiscountEl = document.getElementById("frequencyDiscount");
   const deepClean = document.getElementById("deepClean");
   const clearPackageButton = document.getElementById("clearPackage");
   const clearAddonsButton = document.getElementById("clearAddons");
@@ -70,6 +71,17 @@ if (form) {
       .reduce((sum, input) => sum + Number(PRICES.addons[input.value] || 0), 0);
   }
 
+  function selectedFrequency() {
+    return document.querySelector('input[name="frequency"]:checked')?.value || "one-time";
+  }
+
+  function getFrequencyDiscount() {
+    const frequency = selectedFrequency();
+    if (frequency === "weekly") return 10;
+    if (frequency === "biweekly") return 5;
+    return 0;
+  }
+
   function calculateTotal() {
     const service = selectedService();
     const packageSubtotal = service ? Number(PRICES[service] || 0) : 0;
@@ -79,11 +91,13 @@ if (form) {
         ? Math.max(0, baskets - 1) * Number(PRICES.extraBasket)
         : 0;
     const addonsSubtotal = getAddonsSubtotal();
-    const total = packageSubtotal + laundrySubtotal + addonsSubtotal;
+    const frequencyDiscount = service ? getFrequencyDiscount() : 0;
+    const total = Math.max(0, packageSubtotal + laundrySubtotal + addonsSubtotal - frequencyDiscount);
 
     packageSubtotalEl.textContent = `$${packageSubtotal}`;
     laundrySubtotalEl.textContent = `$${laundrySubtotal}`;
     addonsSubtotalEl.textContent = `$${addonsSubtotal}`;
+    frequencyDiscountEl.textContent = `-$${frequencyDiscount}`;
     totalEl.textContent = `$${total}`;
 
     clearPackageButton.classList.toggle("active", !service);
@@ -123,6 +137,10 @@ if (form) {
 
   clearAddonsButton.addEventListener("click", clearAllAddons);
   basketInput.addEventListener("input", calculateTotal);
+
+  document.querySelectorAll('input[name="frequency"]').forEach(input => {
+    input.addEventListener("change", calculateTotal);
+  });
 
   document.querySelectorAll(".addon input").forEach(input => {
     input.addEventListener("change", calculateTotal);
@@ -164,7 +182,8 @@ if (form) {
       pets: document.getElementById("pets").value,
       date: document.getElementById("date").value,
       detergent: document.getElementById("detergent").value,
-      notes: document.getElementById("notes").value.trim()
+      notes: document.getElementById("notes").value.trim(),
+      frequency: selectedFrequency()
     };
 
     const messageEn = [
@@ -174,6 +193,8 @@ if (form) {
       `Phone: ${values.phone}`,
       `Location: ${values.address || "Not provided"}`,
       `Package: ${TEXT.en.services[service]}`,
+      `Service frequency: ${values.frequency === "weekly" ? "Weekly" : values.frequency === "biweekly" ? "Every 2 Weeks" : values.frequency === "monthly" ? "Monthly" : "One-Time Service"}`,
+      `Recurring discount: $${getFrequencyDiscount()}`,
       `Laundry baskets: ${(service === "laundry" || service === "complete") ? baskets : "N/A"}`,
       `Add-ons: ${addons.length ? addons.join(", ") : "None"}`,
       `Estimated total: $${total}`,
@@ -194,6 +215,8 @@ if (form) {
       `Teléfono: ${values.phone}`,
       `Lugar: ${values.address || "No proporcionado"}`,
       `Paquete: ${TEXT.es.services[service]}`,
+      `Frecuencia: ${values.frequency === "weekly" ? "Semanal" : values.frequency === "biweekly" ? "Cada 2 Semanas" : values.frequency === "monthly" ? "Mensual" : "Una Sola Vez"}`,
+      `Descuento recurrente: $${getFrequencyDiscount()}`,
       `Canastas: ${(service === "laundry" || service === "complete") ? baskets : "No aplica"}`,
       `Extras: ${addons.length ? addons.join(", ") : "Ninguno"}`,
       `Total estimado: $${total}`,

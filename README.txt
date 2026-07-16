@@ -53,3 +53,13 @@ FORCE REFRESH FIX:
 - Tap once to select and tap again to deselect.
 - Added version numbers to CSS and JavaScript links to bypass browser cache.
 - Estimate updates immediately for package, extra laundry, add-ons, and total.
+
+
+SERVICE FREQUENCY UPDATE:
+- Added One-Time, Weekly, Every 2 Weeks, and Monthly options.
+- Weekly subtracts $10 from each estimated visit.
+- Every 2 Weeks subtracts $5 from each estimated visit.
+- One-Time and Monthly have no discount.
+- The itemized estimate now displays the recurring discount.
+- Frequency and discount are included in the quote text message.
+- Recurring discounts begin after the first completed service.

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body class="quote-page">
   <header class="site-header">
@@ -93,6 +93,34 @@
 
         <section class="quote-section">
           <div class="section-number">3</div>
+          <div class="section-body">
+            <h2 data-en="Choose service frequency" data-es="Elija la frecuencia del servicio">Choose service frequency</h2>
+            <p class="frequency-note" data-en="Recurring discounts begin after your first completed service and continue while your recurring schedule remains active." data-es="Los descuentos recurrentes comienzan después de su primer servicio completado y continúan mientras su horario recurrente permanezca activo.">
+              Recurring discounts begin after your first completed service and continue while your recurring schedule remains active.
+            </p>
+            <div class="frequency-grid">
+              <label class="frequency-choice">
+                <input type="radio" name="frequency" value="one-time" checked>
+                <span><strong data-en="One-Time Service" data-es="Servicio de Una Sola Vez">One-Time Service</strong><small data-en="No recurring discount" data-es="Sin descuento recurrente">No recurring discount</small></span>
+              </label>
+              <label class="frequency-choice">
+                <input type="radio" name="frequency" value="weekly">
+                <span><strong data-en="Weekly" data-es="Semanal">Weekly</strong><small data-en="Save $10 per visit" data-es="Ahorre $10 por visita">Save $10 per visit</small></span>
+              </label>
+              <label class="frequency-choice">
+                <input type="radio" name="frequency" value="biweekly">
+                <span><strong data-en="Every 2 Weeks" data-es="Cada 2 Semanas">Every 2 Weeks</strong><small data-en="Save $5 per visit" data-es="Ahorre $5 por visita">Save $5 per visit</small></span>
+              </label>
+              <label class="frequency-choice">
+                <input type="radio" name="frequency" value="monthly">
+                <span><strong data-en="Monthly" data-es="Mensual">Monthly</strong><small data-en="No recurring discount" data-es="Sin descuento recurrente">No recurring discount</small></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="quote-section">
+          <div class="section-number">4</div>
           <div class="section-body form-fields">
             <h2 data-en="Your information" data-es="Su información">Your information</h2>
             <label><span data-en="Name" data-es="Nombre">Name</span><input id="name" type="text" required placeholder="Your name"></label>
@@ -124,6 +152,7 @@
             <div><span data-en="Package" data-es="Paquete">Package</span><strong id="packageSubtotal">$0</strong></div>
             <div><span data-en="Extra laundry" data-es="Lavandería adicional">Extra laundry</span><strong id="laundrySubtotal">$0</strong></div>
             <div><span data-en="Add-ons" data-es="Servicios adicionales">Add-ons</span><strong id="addonsSubtotal">$0</strong></div>
+            <div class="discount-row"><span data-en="Recurring discount" data-es="Descuento recurrente">Recurring discount</span><strong id="frequencyDiscount">-$0</strong></div>
             <div class="summary-total"><span data-en="Estimated total" data-es="Total estimado">Estimated total</span><strong id="estimatedTotal">$0</strong></div>
             <small data-en="Final price is confirmed after Casa Nova reviews the request." data-es="El precio final se confirma después de revisar la solicitud.">Final price is confirmed after Casa Nova reviews the request.</small>
           </div>
@@ -133,6 +162,6 @@
     </div>
   </main>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>
