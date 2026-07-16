@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Casa Nova provides professional trailer cleaning and laundry pickup, wash, dry, fold, and return services in South Texas." />
+  <title>Casa Nova | Cleaning & Laundry Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Casa Nova home">
+        <svg class="brand-mark" viewBox="0 0 120 70" aria-hidden="true">
+          <path d="M8 40 57 7l49 33h-15L57 18 23 40Z" fill="currentColor"/>
+          <path d="M18 49c29 8 55 8 88-6-21 18-54 25-88 15Z" fill="#1E88E5"/>
+          <rect x="50" y="29" width="14" height="14" rx="1" fill="currentColor"/>
+          <path d="M57 29v14M50 36h14" stroke="#fff" stroke-width="2"/>
+          <path d="m102 14 2.5 6.5L111 23l-6.5 2.5L102 32l-2.5-6.5L93 23l6.5-2.5Z" fill="#D4A017"/>
+        </svg>
+        <span><strong>CASA NOVA</strong><small>Cleaning & Laundry Services</small></span>
+      </a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#addons">Add-ons</a>
+        <a href="#how">How It Works</a>
+        <a href="#book">Book</a>
+        <a class="nav-call" href="tel:+19562722071">Call (956) 272-2071</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Professional cleaning & laundry service</p>
+          <h1>A cleaner home.<br><span>More time for you.</span></h1>
+          <p class="hero-text">Casa Nova helps busy workers, travelers, and families come home to a clean space and fresh, folded laundry.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#book">Book a Service</a>
+            <a class="btn btn-secondary" href="sms:+19562722071?&body=Hi%20Casa%20Nova!%20I%27m%20interested%20in%20your%20cleaning%20and%20laundry%20services.">Text Us</a>
+          </div>
+          <div class="trust-row">
+            <span>✓ Reliable</span><span>✓ Flat-rate pricing</span><span>✓ Satisfaction guarantee</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="basket" aria-hidden="true">
+            <div class="towel t1"></div><div class="towel t2"></div><div class="towel t3"></div>
+            <div class="basket-body"></div>
+          </div>
+          <p class="quote">“You work hard.<br>We handle the rest.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Our services</p>
+          <h2>Simple pricing. No guesswork.</h2>
+        </div>
+        <div class="cards">
+          <article class="service-card">
+            <div class="icon">🧺</div>
+            <h3>Laundry Service</h3>
+            <p class="price">$80</p>
+            <ul>
+              <li>Pickup from your trailer or home</li>
+              <li>Premium detergent included</li>
+              <li>Wash, dry, fold, and return</li>
+              <li>Includes 1 standard basket</li>
+            </ul>
+            <p class="fine">Additional baskets: <strong>+$15 each</strong></p>
+            <button class="select-service" data-service="Laundry Service — $80">Choose Laundry</button>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🧼</div>
+            <h3>Standard Trailer Cleaning</h3>
+            <p class="price">$80</p>
+            <ul>
+              <li>Vacuum and mop floors</li>
+              <li>Kitchen and countertops</li>
+              <li>Bathroom, toilet, shower/tub</li>
+              <li>Dusting, trash, high-touch surfaces</li>
+            </ul>
+            <button class="select-service" data-service="Standard Trailer Cleaning — $80">Choose Cleaning</button>
+          </article>
+
+          <article class="service-card featured">
+            <div class="popular">Most Popular</div>
+            <div class="icon">✨</div>
+            <h3>Complete Refresh Package</h3>
+            <p class="price">$135</p>
+            <ul>
+              <li>Laundry pickup, wash, dry, fold, and return</li>
+              <li>Standard trailer cleaning</li>
+              <li>Save $25 versus buying separately</li>
+            </ul>
+            <button class="select-service" data-service="Complete Refresh Package — $135">Choose Complete Refresh</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="addons" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Add-on services</p>
+          <h2>Customize your refresh</h2>
+        </div>
+        <div class="addon-grid">
+          <label class="addon"><input type="checkbox" value="Bed Refresh — $50"><span>🛏️ <strong>Bed Refresh</strong><em>$50</em></span></label>
+          <label class="addon"><input type="checkbox" value="Refrigerator Cleaning — $50"><span>🧊 <strong>Refrigerator Cleaning</strong><em>$50</em></span></label>
+          <label class="addon"><input type="checkbox" value="Microwave Cleaning — $20"><span>🍽️ <strong>Microwave Cleaning</strong><em>$20</em></span></label>
+          <label class="addon"><input type="checkbox" value="Pet Hair Removal — $25"><span>🐾 <strong>Pet Hair Removal</strong><em>$25</em></span></label>
+          <label class="addon"><input type="checkbox" value="Kitchen Organization — $25"><span>🍴 <strong>Kitchen Organization</strong><em>$25</em></span></label>
+          <label class="addon"><input type="checkbox" value="Deep Clean Upgrade — $80"><span>💫 <strong>Deep Clean Upgrade</strong><em>$80</em></span></label>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">How it works</p>
+          <h2>Easy from start to finish</h2>
+        </div>
+        <div class="steps">
+          <div class="step"><b>1</b><h3>Choose your service</h3><p>Select cleaning, laundry, or the complete package.</p></div>
+          <div class="step"><b>2</b><h3>Schedule your visit</h3><p>Tell us about your trailer, laundry, pets, and timing.</p></div>
+          <div class="step"><b>3</b><h3>We handle the work</h3><p>We clean carefully and return your laundry fresh and folded.</p></div>
+          <div class="step"><b>4</b><h3>You relax</h3><p>Come home to a refreshed space and more free time.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guarantee">
+      <div class="container guarantee-grid">
+        <div>
+          <p class="eyebrow light">Casa Nova Guarantee</p>
+          <h2>Your satisfaction is our priority.</h2>
+        </div>
+        <p>If you are not completely satisfied, contact us within 24 hours and we will return to make it right at no additional charge.</p>
+      </div>
+    </section>
+
+    <section id="book" class="section">
+      <div class="container booking-grid">
+        <div>
+          <p class="eyebrow">Book today</p>
+          <h2>Ready for your Casa Nova refresh?</h2>
+          <p>Complete this quick form. When you tap “Send Booking Request,” your phone will open a prewritten text message to Casa Nova.</p>
+          <div class="contact-card">
+            <strong>Call or text</strong>
+            <a href="tel:+19562722071">(956) 272-2071</a>
+            <span>Proudly serving South Texas and surrounding areas</span>
+          </div>
+        </div>
+
+        <form id="bookingForm" class="booking-form">
+          <label>Name<input id="name" type="text" required placeholder="Your name"></label>
+          <label>Phone<input id="phone" type="tel" required placeholder="Your phone number"></label>
+          <label>Address or RV park<input id="address" type="text" placeholder="Service location"></label>
+          <label>Service
+            <select id="service" required>
+              <option value="">Choose a service</option>
+              <option>Laundry Service — $80</option>
+              <option>Standard Trailer Cleaning — $80</option>
+              <option>Complete Refresh Package — $135</option>
+            </select>
+          </label>
+          <div class="form-row">
+            <label>Laundry baskets<input id="baskets" type="number" min="0" value="1"></label>
+            <label>Pets?
+              <select id="pets"><option>No</option><option>Yes</option></select>
+            </label>
+          </div>
+          <label>Preferred date<input id="date" type="date"></label>
+          <label>Notes<textarea id="notes" rows="4" placeholder="Bedrooms, bathrooms, detergent preference, access instructions, or special requests"></textarea></label>
+          <button class="btn btn-primary full" type="submit">Send Booking Request</button>
+          <p class="form-note">Submitting opens your phone's text-message app. No information is stored on this website.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="brand footer-brand">
+        <svg class="brand-mark" viewBox="0 0 120 70" aria-hidden="true">
+          <path d="M8 40 57 7l49 33h-15L57 18 23 40Z" fill="currentColor"/>
+          <path d="M18 49c29 8 55 8 88-6-21 18-54 25-88 15Z" fill="#1E88E5"/>
+          <rect x="50" y="29" width="14" height="14" rx="1" fill="currentColor"/>
+          <path d="M57 29v14M50 36h14" stroke="#fff" stroke-width="2"/>
+        </svg>
+        <span><strong>CASA NOVA</strong><small>Cleaning & Laundry Services</small></span>
+      </div>
+      <div><a href="tel:+19562722071">(956) 272-2071</a><br><span>South Texas</span></div>
+      <p>© <span id="year"></span> Casa Nova. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
